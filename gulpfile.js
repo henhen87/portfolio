@@ -39,6 +39,7 @@ gulp.task('watch-less', function(cb) {
 			.pipe(browserSync.reload({
 			    stream: true
 		    }))
+		    .pipe(gutil.log(`[less] ${e.path}`))
 	});
 });
 

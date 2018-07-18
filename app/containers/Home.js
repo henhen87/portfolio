@@ -8,8 +8,13 @@ class Home extends Component {
 			checked: null
 		}
 
-		this.right = React.createRef();
-		this.front = React.createRef();
+		let refs = ['front', 'right', 'left', 'bottom', 'top', 'back'];
+
+		refs.forEach(e => {
+			this[e] = React.createRef();
+		})
+		// this.front = React.createRef();
+		// this.right = React.createRef();
 	}
 	componentDidMount () {
 		var cube = document.querySelector('.cube');
@@ -53,22 +58,58 @@ class Home extends Component {
 					</div>
 					<p className="radio-group">
 						<label>
-						<input type="radio" ref={this.front} name="rotate-cube-side" value="front" onClick={this.handleRadio} checked={this.state.checked === this.front.current} /> front
+							<input 
+								type="radio" 
+								ref={this.front}
+								name="rotate-cube-side" 
+								value="front" 
+								onChange={this.handleRadio} 
+							checked={this.state.checked === this.front.current} /> front
 						</label>
 						<label>
-						<input type="radio" ref={this.rightRadio} name="rotate-cube-side" value="right" onClick={this.handleRadio} checked={this.state.checked === this.right.current} /> right
+							<input 
+								type="radio" 
+								ref={this.right}
+								name="rotate-cube-side" 
+								value="right" 
+								onChange={this.handleRadio} 
+							/> right
 						</label>
 						<label>
-						<input type="radio" name="rotate-cube-side" value="back" onClick={this.handleRadio} /> back
+							<input 
+								type="radio" 
+								ref={this.back}
+								name="rotate-cube-side" 
+								value="back" 
+								onChange={this.handleRadio} 
+							/> back
 						</label>
 						<label>
-						<input type="radio" name="rotate-cube-side" value="left" onClick={this.handleRadio} /> left
+							<input 
+								type="radio" 
+								ref={this.left}
+								name="rotate-cube-side" 
+								value="left" 
+								onChange={this.handleRadio} 
+							/> left
 						</label>
 						<label>
-						<input type="radio" name="rotate-cube-side" value="top" onClick={this.handleRadio} /> top
+							<input 
+								type="radio" 
+								ref={this.top}
+								name="rotate-cube-side" 
+								value="top" 
+								onChange={this.handleRadio} 
+							/> top
 						</label>
 						<label>
-						<input type="radio" name="rotate-cube-side" value="bottom" onClick={this.handleRadio} /> bottom
+							<input 
+								type="radio" 
+								ref={this.bottom}
+								name="rotate-cube-side" 
+								value="bottom" 
+								onChange={this.handleRadio} 
+							/> bottom
 						</label>
 					</p>
 				</div>

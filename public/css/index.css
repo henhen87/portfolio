@@ -6719,7 +6719,6 @@ section#main {
 section#main .scene {
   width: 200px;
   height: 200px;
-  border: 1px solid #CCC;
   margin: 80px;
   -webkit-perspective: 400px;
           perspective: 400px;
@@ -6765,7 +6764,6 @@ section#main .cube__face {
   position: absolute;
   width: 200px;
   height: 200px;
-  border: 2px solid black;
   line-height: 200px;
   font-size: 40px;
   font-weight: bold;
