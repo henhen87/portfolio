@@ -31,15 +31,15 @@ gulp.task('build-js', function() {
 });
 
 gulp.task('watch-less', function(cb) {
-	return watch(['./app/views/less/index.less'], function(e) {
-		return gulp.src(e.path)
-			.pipe(less())
-			.pipe(postcss([ autoprefixer() ]))
-			.pipe(gulp.dest('./public/css'))
-			.pipe(browserSync.reload({
-			    stream: true
-		    }))
-		    .pipe(gutil.log(`[less] ${e.path}`))
+	watch(['./app/views/less/index.less'], function(e) {
+		pump([
+			gulp.src(e.path),
+			less(),
+			postcss([ autoprefixer() ]),
+			gulp.dest('./public/css'),
+		], (err) => {
+			gutil.log(`[less] ${e.path}`, err);
+		});
 	});
 });
 
