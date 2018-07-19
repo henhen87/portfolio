@@ -46,6 +46,9 @@ class Home extends Component {
 		return (
 			<section id="main">
 				<div className="container">
+					<div className="title">
+						<h1>Core Skills</h1>
+					</div>
 					<div className="scene">
 						<div className="cube">
 							<div className="cube__face cube__face--front">C++</div>
