@@ -52,10 +52,10 @@ class Home extends Component {
 					<div className="scene">
 						<div className="cube">
 							<div className="cube__face cube__face--front">C++</div>
-							<div className="cube__face cube__face--back">JavaScript</div>
+							<div className="cube__face cube__face--back">React</div>
 							<div className="cube__face cube__face--right">NodeJS</div>
-							<div className="cube__face cube__face--left">CSS</div>
-							<div className="cube__face cube__face--top">HTML</div>
+							<div className="cube__face cube__face--left">JavaScript</div>
+							<div className="cube__face cube__face--top">HTML/CSS</div>
 							<div className="cube__face cube__face--bottom">MySQL/MongoDB</div>
 						</div>
 					</div>
