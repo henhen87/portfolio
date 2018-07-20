@@ -44,11 +44,15 @@ gulp.task('watch-less', function(cb) {
 });
 
 gulp.task('build-less', function(cb) {
-   return gulp.src('./app/views/less/**/*.less')
-	   .pipe(less())
-	   .pipe(cleanCSS())
-	   .pipe(postcss([ autoprefixer() ]))
-	   .pipe(gulp.dest('./public/css'))
+		pump([
+	   		gulp.src('./app/views/less/**/*.less'),
+			less(),
+		    cleanCSS(),
+		    postcss([ autoprefixer() ]),
+		    gulp.dest('./public/css')
+		], (err) => {
+			gutil.log(`[+--build-less--+]`)
+		});
 });
 
 gulp.task('clean', function(cb) {
