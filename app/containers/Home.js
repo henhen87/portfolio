@@ -6,12 +6,12 @@ class Home extends Component {
 
 		this.state = {
 			checked: null,
+			sides: ['front', 'right', 'left', 'bottom', 'top', 'back'],
+			pause: false,
 			currentSide: ''
 		}
 
-		let refs = ['front', 'right', 'left', 'bottom', 'top', 'back'];
-
-		refs.forEach(e => {
+		this.state.sides.forEach(e => {
 			this[e] = React.createRef();
 		});
 	}
@@ -34,11 +34,31 @@ class Home extends Component {
 		// changeSide();
 
 		// radioGroup.addEventListener( 'change', changeSide );
+		let index = 0;
+
+		setInterval(() => {
+			if (this.state.pause === false) {
+				this.setState({ currentSide: this.state.sides[index] });
+				console.log('STATE PAUSE DID MOUNT', this.state.pause)
+				index++;
+			}
+			if (index === 5) {
+				index = 0;
+			}
+		}, 1500);
 	}
 
 	changeSide = e => {
 		console.log('CLICK EVENT VAL', e.target.value);
-		this.setState({ currentSide: e.target.value });
+		this.setState({ 
+			currentSide: e.target.value,
+			pause: true 
+		}, () => {
+			console.log('SGTAE PUIAGE', this.state.pause)
+			setTimeout(() => {
+				this.setState({ pause: false });
+			}, 1500)
+		});
 	}
 
 	handleRadio = (e) => {
@@ -64,7 +84,7 @@ class Home extends Component {
 							<div className="cube__face cube__face--bottom">MySQL/MongoDB</div>
 						</div>
 					</div>
-					<p className="radio-group">
+					{/*<p className="radio-group">
 						<label>
 							<input
 								type="radio" 
@@ -119,7 +139,7 @@ class Home extends Component {
 								onClick={this.changeSide} 
 							/> bottom
 						</label>
-					</p>
+					</p>*/}
 				</div>
 			</section>
 		);

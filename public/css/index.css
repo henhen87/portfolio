@@ -6720,10 +6720,6 @@ section#main .container {
   position: relative;
   height: 100%;
 }
-section#main .title {
-  width: 200px;
-  margin: 80px;
-}
 section#main .title h1 {
   text-align: center;
 }
@@ -6750,9 +6746,6 @@ section#main .cube {
   transition: -webkit-transform 1s;
   transition: transform 1s;
   transition: transform 1s, -webkit-transform 1s;
-}
-section#main .cube.box {
-  border: solid thick;
 }
 section#main .cube.show-front {
   -webkit-transform: translateZ(-100px) rotateY(0deg);
