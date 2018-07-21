@@ -84,62 +84,6 @@ class Home extends Component {
 							<div className="cube__face cube__face--bottom">MySQL/MongoDB</div>
 						</div>
 					</div>
-					{/*<p className="radio-group">
-						<label>
-							<input
-								type="radio" 
-								ref={this.front}
-								name="rotate-cube-side" 
-								value="front" 
-								onClick={this.changeSide} 
-							/> front
-						</label>
-						<label>
-							<input
-								type="radio" 
-								ref={this.right}
-								name="rotate-cube-side" 
-								value="right" 
-								onClick={this.changeSide} 
-							/> right
-						</label>
-						<label>
-							<input
-								type="radio" 
-								ref={this.back}
-								name="rotate-cube-side" 
-								value="back" 
-								onClick={this.changeSide} 
-							/> back
-						</label>
-						<label>
-							<input
-								type="radio" 
-								ref={this.left}
-								name="rotate-cube-side" 
-								value="left" 
-								onClick={this.changeSide} 
-							/> left
-						</label>
-						<label>
-							<input
-								type="radio" 
-								ref={this.top}
-								name="rotate-cube-side" 
-								value="top" 
-								onClick={this.changeSide} 
-							/> top
-						</label>
-						<label>
-							<input
-								type="radio" 
-								ref={this.bottom}
-								name="rotate-cube-side" 
-								value="bottom" 
-								onClick={this.changeSide} 
-							/> bottom
-						</label>
-					</p>*/}
 				</div>
 			</section>
 		);
