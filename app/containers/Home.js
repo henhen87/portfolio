@@ -18,22 +18,6 @@ class Home extends Component {
 
 	componentDidMount () {
 		// let cube = document.querySelector('.cube');
-		// let radioGroup = document.querySelector('.radio-group');
-		// let currentClass = '';
-
-		// function changeSide() {
-		// 	var checkedRadio = radioGroup.querySelector(':checked');
-		// 	var showClass = 'show-' + checkedRadio.value;
-		// 	if ( currentClass ) {
-		// 		cube.classList.remove( currentClass );
-		// 	}
-		// 	cube.classList.add( showClass );
-		// 	currentClass = showClass;
-		// }
-		// // set initial side
-		// changeSide();
-
-		// radioGroup.addEventListener( 'change', changeSide );
 		let index = 0;
 
 		setInterval(() => {
