@@ -17,7 +17,6 @@ class Home extends Component {
 	}
 
 	componentDidMount () {
-		// let cube = document.querySelector('.cube');
 		let index = 0;
 
 		setInterval(() => {
@@ -33,12 +32,10 @@ class Home extends Component {
 	}
 
 	changeSide = e => {
-		console.log('CLICK EVENT VAL', e.target.value);
 		this.setState({ 
 			currentSide: e.target.value,
 			pause: true 
 		}, () => {
-			console.log('SGTAE PUIAGE', this.state.pause)
 			setTimeout(() => {
 				this.setState({ pause: false });
 			}, 1500)
@@ -46,8 +43,6 @@ class Home extends Component {
 	}
 
 	handleRadio = (e) => {
-		console.log('REFFF', this.right.current)
-		console.log('EEEE', e.target.value)
 		this.setState({ checked: this[e.target.value].current });
 	}
 
