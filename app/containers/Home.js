@@ -5,35 +5,40 @@ class Home extends Component {
 		super(props);
 
 		this.state = {
-			checked: null
+			checked: null,
+			currentSide: ''
 		}
 
 		let refs = ['front', 'right', 'left', 'bottom', 'top', 'back'];
 
 		refs.forEach(e => {
 			this[e] = React.createRef();
-		})
-		// this.front = React.createRef();
-		// this.right = React.createRef();
+		});
 	}
+
 	componentDidMount () {
-		var cube = document.querySelector('.cube');
-		var radioGroup = document.querySelector('.radio-group');
-		var currentClass = '';
+		// let cube = document.querySelector('.cube');
+		// let radioGroup = document.querySelector('.radio-group');
+		// let currentClass = '';
 
-		function changeSide() {
-			var checkedRadio = radioGroup.querySelector(':checked');
-			var showClass = 'show-' + checkedRadio.value;
-			if ( currentClass ) {
-				cube.classList.remove( currentClass );
-			}
-			cube.classList.add( showClass );
-			currentClass = showClass;
-		}
-		// set initial side
-		changeSide();
+		// function changeSide() {
+		// 	var checkedRadio = radioGroup.querySelector(':checked');
+		// 	var showClass = 'show-' + checkedRadio.value;
+		// 	if ( currentClass ) {
+		// 		cube.classList.remove( currentClass );
+		// 	}
+		// 	cube.classList.add( showClass );
+		// 	currentClass = showClass;
+		// }
+		// // set initial side
+		// changeSide();
 
-		radioGroup.addEventListener( 'change', changeSide );
+		// radioGroup.addEventListener( 'change', changeSide );
+	}
+
+	changeSide = e => {
+		console.log('CLICK EVENT VAL', e.target.value);
+		this.setState({ currentSide: e.target.value });
 	}
 
 	handleRadio = (e) => {
@@ -50,7 +55,7 @@ class Home extends Component {
 						<h1>Core Skills</h1>
 					</div>
 					<div className="scene">
-						<div className="cube">
+						<div className={`cube show-${this.state.currentSide}`}>
 							<div className="cube__face cube__face--front">C++</div>
 							<div className="cube__face cube__face--back">React</div>
 							<div className="cube__face cube__face--right">NodeJS</div>
@@ -61,57 +66,57 @@ class Home extends Component {
 					</div>
 					<p className="radio-group">
 						<label>
-							<input 
+							<input
 								type="radio" 
 								ref={this.front}
 								name="rotate-cube-side" 
 								value="front" 
-								onChange={this.handleRadio} 
-							checked={this.state.checked === this.front.current} /> front
+								onClick={this.changeSide} 
+							/> front
 						</label>
 						<label>
-							<input 
+							<input
 								type="radio" 
 								ref={this.right}
 								name="rotate-cube-side" 
 								value="right" 
-								onChange={this.handleRadio} 
+								onClick={this.changeSide} 
 							/> right
 						</label>
 						<label>
-							<input 
+							<input
 								type="radio" 
 								ref={this.back}
 								name="rotate-cube-side" 
 								value="back" 
-								onChange={this.handleRadio} 
+								onClick={this.changeSide} 
 							/> back
 						</label>
 						<label>
-							<input 
+							<input
 								type="radio" 
 								ref={this.left}
 								name="rotate-cube-side" 
 								value="left" 
-								onChange={this.handleRadio} 
+								onClick={this.changeSide} 
 							/> left
 						</label>
 						<label>
-							<input 
+							<input
 								type="radio" 
 								ref={this.top}
 								name="rotate-cube-side" 
 								value="top" 
-								onChange={this.handleRadio} 
+								onClick={this.changeSide} 
 							/> top
 						</label>
 						<label>
-							<input 
+							<input
 								type="radio" 
 								ref={this.bottom}
 								name="rotate-cube-side" 
 								value="bottom" 
-								onChange={this.handleRadio} 
+								onClick={this.changeSide} 
 							/> bottom
 						</label>
 					</p>
