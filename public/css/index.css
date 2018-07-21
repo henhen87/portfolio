@@ -6775,7 +6775,7 @@ section#main .cube__face {
   position: absolute;
   width: 200px;
   height: 200px;
-  border: solid thin #D2D2D2;
+  border: solid thin #000000;
   line-height: 200px;
   font-size: 20px;
   font-weight: bold;
@@ -6784,22 +6784,22 @@ section#main .cube__face {
   text-shadow: 3px 2px 5px #000000;
 }
 section#main .cube__face--front {
-  background: rgba(255, 0, 0, 0.7);
+  background: rgba(0, 255, 0, 0.4);
 }
 section#main .cube__face--right {
-  background: rgba(255, 255, 0, 0.7);
+  background: rgba(255, 255, 0, 0.4);
 }
 section#main .cube__face--back {
-  background: rgba(0, 255, 0, 0.7);
+  background: rgba(255, 0, 255, 0.4);
 }
 section#main .cube__face--left {
-  background: rgba(0, 255, 255, 0.7);
+  background: rgba(0, 255, 255, 0.4);
 }
 section#main .cube__face--top {
-  background: rgba(0, 0, 255, 0.7);
+  background: rgba(255, 64, 0, 0.4);
 }
 section#main .cube__face--bottom {
-  background: rgba(255, 0, 255, 0.7);
+  background: rgba(0, 0, 255, 0.4);
 }
 section#main .cube__face--front {
   -webkit-transform: rotateY(0deg) translateZ(100px);
