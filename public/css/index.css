@@ -6716,6 +6716,10 @@ body {
 section#main {
   height: 100vh;
 }
+section#main .container {
+  position: relative;
+  height: 100%;
+}
 section#main .title {
   width: 200px;
   margin: 80px;
@@ -6726,10 +6730,13 @@ section#main .title h1 {
 section#main .scene {
   width: 200px;
   height: 200px;
-  border: 1px solid #CCC;
-  margin: 80px;
   -webkit-perspective: 400px;
           perspective: 400px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
 }
 section#main .cube {
   width: 200px;
