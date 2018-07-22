@@ -6764,6 +6764,7 @@ section#main section.menu .cube {
   transition: -webkit-transform 1s;
   transition: transform 1s;
   transition: transform 1s, -webkit-transform 1s;
+  cursor: pointer;
 }
 section#main section.menu .cube.show-front {
   -webkit-transform: translateZ(-100px) rotateY(0deg);
