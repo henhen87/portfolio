@@ -6,7 +6,7 @@ import Home from 'containers/Home';
 render(
 	<Router>
 		<Switch>
-		    <Route exact path='/best-website' component={Home} />
+		    <Route exact path='/best-website/:section' component={Home} />
 	    </Switch>
 	</Router>,
 	document.getElementById('root')

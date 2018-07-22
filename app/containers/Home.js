@@ -53,40 +53,35 @@ class Home extends Component {
 
 	render () {
 		console.log('PARAMS', this.props.match.params);
-		let MySection = components[this.state.section];
+		// let MySection = components[this.state.section];
+		let MySection = components[this.props.match.params.section];
 		
 		return (
 			<section id="main">
 				<section className={`menu ${this.state.split ? 'split' : ''}`}>
-					<div className="container">
-						<div className="title">
-							<h1>Core Skills</h1>
-						</div>
-						<div className="scene">
-							<div className={`cube show-${this.state.currentSide}`}>
-								<div onClick={e => {
-									e.preventDefault();
-									// this.props.history.push('best-website/about');
-									this.setState({ section: 'about', split: true });
-								}} className="cube__face cube__face--front">About Me</div>
-								<div className="cube__face cube__face--back">Skills</div>
-								<div className="cube__face cube__face--right">Resume</div>
-								<div className="cube__face cube__face--left">Experience</div>
-								<div className="cube__face cube__face--top">Projects</div>
-								<div className="cube__face cube__face--bottom">Contact Me</div>
-							</div>
+					<div className="title">
+						<h1>Core Skills</h1>
+					</div>
+					<div className="scene">
+						<div className={`cube show-${this.state.currentSide}`}>
+							<div onClick={e => {
+								e.preventDefault();
+								this.props.history.push('/best-website/about');
+								// this.setState({ section: 'about', split: true });
+							}} className="cube__face cube__face--front">About Me</div>
+							<div className="cube__face cube__face--back">Skills</div>
+							<div className="cube__face cube__face--right">Resume</div>
+							<div className="cube__face cube__face--left">Experience</div>
+							<div className="cube__face cube__face--top">Projects</div>
+							<div className="cube__face cube__face--bottom">Contact Me</div>
 						</div>
 					</div>
 				</section>
 				<section className={`description ${this.state.split ? 'split' : ''}`}>
-					{
+					{/*
 						this.state.split && <MySection />
-					}
-					{/*<Router>
-						<Switch>
-							<Route path='/best-website/:section' component={MySection} />
-						</Switch>
-					</Router>*/}
+					*/}
+					<Route path='/best-website/:section' component={MySection} />
 				</section>
 			</section>
 		);
