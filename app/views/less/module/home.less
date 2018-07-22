@@ -8,17 +8,9 @@ body {
 
 section#main {
   section {
-    &.split {
-      width: 50%;
-      float: left;
-    }
     height: 100%;
     width: 100%;
-    transition: width 1s ease-in;
-  }
-  .container {
-    position: relative;
-    height: 100%;
+    transition: width 500ms ease-in;
   }
   .title {
     h1 {
@@ -35,6 +27,16 @@ section#main {
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
+      transition: all 500ms ease-in;
+      z-index: 1000;
+    }
+    #myCanvas {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      opacity: 0.5;
+      z-index: -999;
     }
 
     .cube {
@@ -116,7 +118,38 @@ section#main {
       transform: rotateX(-90deg) translateZ(100px); 
     }
     position: relative;
+    &.split {
+      width: 30%;
+      float: left;
+    }
   }
-
+  section.description {
+    &.split {
+      width: 70%;
+      height: 100%;
+      opacity: 1;
+      float: left;
+      position: inherit;
+      top: unset;
+      left: unset;
+      transform: inherit;
+      border-radius: inherit;
+    }
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    opacity: 0.5;
+  }
+  
+  #bach {
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+  position: relative;
   height: 100vh;
 }

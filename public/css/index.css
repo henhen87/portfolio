@@ -6714,21 +6714,14 @@ body {
   font-family: sans-serif;
 }
 section#main {
+  position: relative;
   height: 100vh;
 }
 section#main section {
   height: 100%;
   width: 100%;
-  -webkit-transition: width 1s ease-in;
-  transition: width 1s ease-in;
-}
-section#main section.split {
-  width: 50%;
-  float: left;
-}
-section#main .container {
-  position: relative;
-  height: 100%;
+  -webkit-transition: width 500ms ease-in;
+  transition: width 500ms ease-in;
 }
 section#main .title h1 {
   text-align: center;
@@ -6746,6 +6739,18 @@ section#main section.menu .scene {
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
+  -webkit-transition: all 500ms ease-in;
+  transition: all 500ms ease-in;
+  z-index: 1000;
+}
+section#main section.menu #myCanvas {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  opacity: 0.5;
+  z-index: -999;
 }
 section#main section.menu .cube {
   width: 200px;
@@ -6837,4 +6842,36 @@ section#main section.menu .cube__face--top {
 section#main section.menu .cube__face--bottom {
   -webkit-transform: rotateX(-90deg) translateZ(100px);
           transform: rotateX(-90deg) translateZ(100px);
+}
+section#main section.menu.split {
+  width: 30%;
+  float: left;
+}
+section#main section.description {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  opacity: 0.5;
+}
+section#main section.description.split {
+  width: 70%;
+  height: 100%;
+  opacity: 1;
+  float: left;
+  position: inherit;
+  top: unset;
+  left: unset;
+  -webkit-transform: inherit;
+          transform: inherit;
+  border-radius: inherit;
+}
+section#main #bach {
+  position: absolute;
+  left: 0;
+  top: 0;
 }
