@@ -8,8 +8,6 @@ const components = {
 };
 
 class Home extends Component {
-	this.canvas = document.getElementById("myCanvas");
-	this.ctx = canvas.getContext("2d");
 	constructor (props) {
 		super(props);
 
@@ -29,22 +27,29 @@ class Home extends Component {
 
 	componentDidMount () {
 		let index = 0;
-
+		let canvas = document.getElementById("myCanvas");
+		let ctx = canvas.getContext("2d");
 		let ballRadius = 10;
-		let x = this.canvas.width / 2;
-		let y = this.canvas.height - 30;
+		let x = canvas.width / 2;
+		let y = canvas.height - 30;
 		let dx = 2;
 		let dy = -2;
 
-		
+		function drawBall() {
+		    ctx.beginPath();
+		    ctx.arc(x, y, ballRadius, 0, Math.PI*2);
+		    ctx.fillStyle = "#000000";
+		    ctx.fill();
+		    ctx.closePath();
+		}
 		function draw() {
-			ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+			ctx.clearRect(0, 0, canvas.width, canvas.height);
 			drawBall();
 
-			if (x + dx > this.canvas.width-ballRadius || x + dx < ballRadius) {
+			if (x + dx > canvas.width-ballRadius || x + dx < ballRadius) {
 		        dx = -dx;
 		    }
-		    if (y + dy > this.canvas.height-ballRadius || y + dy < ballRadius) {
+		    if (y + dy > canvas.height-ballRadius || y + dy < ballRadius) {
 		        dy = -dy;
 		    }
 			x += dx;
@@ -61,14 +66,6 @@ class Home extends Component {
 				index = 0;
 			}
 		}, 1500);
-	}
-
-	drawBall() {
-	    ctx.beginPath();
-	    ctx.arc(x, y, ballRadius, 0, Math.PI*2);
-	    ctx.fillStyle = "#000000";
-	    ctx.fill();
-	    ctx.closePath();
 	}
 
 	changeSide = e => {

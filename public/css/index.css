@@ -6714,6 +6714,7 @@ body {
   font-family: sans-serif;
 }
 section#main {
+  overflow: hidden;
   position: relative;
   height: 100vh;
 }
@@ -6749,7 +6750,6 @@ section#main section.menu #myCanvas {
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
-  opacity: 0.5;
   z-index: -999;
 }
 section#main section.menu .cube {
@@ -6855,11 +6855,10 @@ section#main section.description {
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
   border-radius: 50%;
-  width: 25px;
-  height: 25px;
-  opacity: 0.5;
+  display: none;
 }
 section#main section.description.split {
+  display: inherit;
   width: 70%;
   height: 100%;
   opacity: 1;
