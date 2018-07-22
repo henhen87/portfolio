@@ -1,4 +1,11 @@
 import React, { Component } from 'react';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+// import { Switch, Route, Link } from 'react-router-dom';
+import Sections from 'components/About';
+
+const components = {
+	about: Sections.About
+};
 
 class Home extends Component {
 	constructor (props) {
@@ -8,7 +15,9 @@ class Home extends Component {
 			checked: null,
 			sides: ['front', 'right', 'left', 'bottom', 'top', 'back'],
 			pause: false,
-			currentSide: ''
+			currentSide: '',
+			split: false,
+			section: ''
 		}
 
 		this.state.sides.forEach(e => {
@@ -42,28 +51,43 @@ class Home extends Component {
 		});
 	}
 
-	handleRadio = (e) => {
-		this.setState({ checked: this[e.target.value].current });
-	}
-
 	render () {
+		console.log('PARAMS', this.props.match.params);
+		let MySection = components[this.state.section];
+		
 		return (
 			<section id="main">
-				<div className="container">
-					<div className="title">
-						<h1>Core Skills</h1>
-					</div>
-					<div className="scene">
-						<div className={`cube show-${this.state.currentSide}`}>
-							<div className="cube__face cube__face--front">C++</div>
-							<div className="cube__face cube__face--back">React</div>
-							<div className="cube__face cube__face--right">NodeJS</div>
-							<div className="cube__face cube__face--left">JavaScript</div>
-							<div className="cube__face cube__face--top">HTML/CSS</div>
-							<div className="cube__face cube__face--bottom">MySQL/MongoDB</div>
+				<section className={`menu ${this.state.split ? 'split' : ''}`}>
+					<div className="container">
+						<div className="title">
+							<h1>Core Skills</h1>
+						</div>
+						<div className="scene">
+							<div className={`cube show-${this.state.currentSide}`}>
+								<div onClick={e => {
+									e.preventDefault();
+									// this.props.history.push('best-website/about');
+									this.setState({ section: 'about', split: true });
+								}} className="cube__face cube__face--front">About Me</div>
+								<div className="cube__face cube__face--back">Skills</div>
+								<div className="cube__face cube__face--right">Resume</div>
+								<div className="cube__face cube__face--left">Experience</div>
+								<div className="cube__face cube__face--top">Projects</div>
+								<div className="cube__face cube__face--bottom">Contact Me</div>
+							</div>
 						</div>
 					</div>
-				</div>
+				</section>
+				<section className={`description ${this.state.split ? 'split' : ''}`}>
+					{
+						this.state.split && <MySection />
+					}
+					{/*<Router>
+						<Switch>
+							<Route path='/best-website/:section' component={MySection} />
+						</Switch>
+					</Router>*/}
+				</section>
 			</section>
 		);
 	}

@@ -6716,6 +6716,16 @@ body {
 section#main {
   height: 100vh;
 }
+section#main section {
+  height: 100%;
+  width: 100%;
+  -webkit-transition: width 1s ease-in;
+  transition: width 1s ease-in;
+}
+section#main section.split {
+  width: 50%;
+  float: left;
+}
 section#main .container {
   position: relative;
   height: 100%;

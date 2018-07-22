@@ -15,9 +15,10 @@ module.exports = function (app) {
 			});
 		});
 
-	app.route('/')
+	app.route('*')
 		.get(function(req, res, next) {
 			res.sendFile(path.join(__dirname + '/../..', 'public', "index.html"));	
 		});
+
 }
 
