@@ -83,8 +83,8 @@ class Home extends Component {
 		this.setState({
 			split: !this.state.split
 		});
-
-		this.props.history.push('about');
+		console.log('VALUE', e.target.getAttribute('data-value'));
+		this.props.history.push(e.target.getAttribute('data-value'));
 	}
 
 	render () {
@@ -95,12 +95,12 @@ class Home extends Component {
 				<section className={`menu ${this.state.split ? 'split' : ''}`}>
 					<div className="scene">
 						<div className={`cube show-${this.state.currentSide}`}>
-							<div onClick={this.split} value="about" className="cube__face cube__face--front">About Me</div>
-							<div onClick={this.split} value="skills" className="cube__face cube__face--back">Skills</div>
-							<div onClick={this.split} value="resume" className="cube__face cube__face--right">Resume</div>
-							<div onClick={this.split} value="experience" className="cube__face cube__face--left">Experience</div>
-							<div onClick={this.split} value="projects" className="cube__face cube__face--top">Projects</div>
-							<div onClick={this.split} value="contact" className="cube__face cube__face--bottom">Contact Me</div>
+							<div onClick={this.split} data-value="about" className="cube__face cube__face--front">About Me</div>
+							<div onClick={this.split} data-value="skills" className="cube__face cube__face--back">Skills</div>
+							<div onClick={this.split} data-value="resume" className="cube__face cube__face--right">Resume</div>
+							<div onClick={this.split} data-value="experience" className="cube__face cube__face--left">Experience</div>
+							<div onClick={this.split} data-value="projects" className="cube__face cube__face--top">Projects</div>
+							<div onClick={this.split} data-value="contact" className="cube__face cube__face--bottom">Contact Me</div>
 						</div>
 					</div>
 					<canvas id="myCanvas" width="200" height="200"></canvas>
