@@ -9,6 +9,32 @@
 
 <body>
   	<div id="root"></div>
+  	<div id="player"></div>
 	<script src="/js/index.js"></script>
+	<script>
+		//youtube player
+		var tag = document.createElement('script');
+
+		tag.src = "https://www.youtube.com/iframe_api";
+		var firstScriptTag = document.getElementsByTagName('script')[0];
+		firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+		var player;
+		function onYouTubeIframeAPIReady() {
+			console.log('INSIDE YOUTUBE')
+			player = new YT.Player('player', {
+				height: '1',
+				width: '1',
+				playerVars: { 'autoplay': 1, 'loop': 1, 'controls': 0,'autohide':1,'origin':'http://localhost:3000' },
+				events: {
+	            'onReady': onPlayerReady
+	          }
+			});
+		}
+
+		function onPlayerReady() {
+			player.loadPlaylist(['7EiDDDZZjv4', 'IwMEiuXE89U', 'Lp39Z_76_n0']);
+		}
+	</script>
 </body>
 </html>

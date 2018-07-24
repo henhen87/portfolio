@@ -26,6 +26,7 @@ class Home extends Component {
 	}
 
 	componentDidMount () {
+		//ball
 		let index = 0;
 		let canvas = document.getElementById("myCanvas");
 		let ctx = canvas.getContext("2d");
@@ -111,14 +112,15 @@ class Home extends Component {
 					*/}
 					<Route path='/best-website/:section' component={MySection} />
 				</section>
-				<iframe 
+				
+				{/*<iframe 
 					id="bach"
 					width="1" 
 					height="1" 
 					src="https://www.youtube.com/embed/Lp39Z_76_n0?playlist=Lp39Z_76_n0&loop=1&autoplay=1" 
 					frameBorder="0" 
 					allow="autoplay; encrypted-media; loop" 
-				></iframe>
+				></iframe>*/}
 			</section>
 		);
 	}

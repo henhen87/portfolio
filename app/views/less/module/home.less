@@ -6,6 +6,13 @@ body {
   font-family: sans-serif; 
 }
 
+#bach, #player {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: -1000
+}
+
 section#main {
   section {
     height: 100%;
@@ -148,11 +155,13 @@ section#main {
     // opacity: 0;
   }
   
-  #bach {
-    position: absolute;
-    left: 0;
-    top: 0;
-  }
+  // #bach, #player {
+  //   position: absolute;
+  //   left: 0;
+  //   top: 0;
+  //   z-index: -1000
+  // }
+
   overflow: hidden;
   position: relative;
   height: 100vh;
