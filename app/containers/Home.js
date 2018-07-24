@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 // import { Switch, Route, Link } from 'react-router-dom';
-import Sections from 'components/About';
+import Sections from 'components/Sections';
 
 const components = {
 	about: Sections.About
