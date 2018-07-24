@@ -63,10 +63,10 @@ class Home extends Component {
 				this.setState({ currentSide: this.state.sides[index] });
 				index++;
 			}
-			if (index === 5) {
+			if (index === 6) {
 				index = 0;
 			}
-		}, 1500);
+		}, 2000);
 	}
 
 	changeSide = e => {
