@@ -6877,3 +6877,15 @@ section#main section.description.split {
           transform: inherit;
   border-radius: inherit;
 }
+#aboutMe {
+  padding: 40px 25px;
+}
+#aboutMe h1 {
+  text-align: center;
+  color: #3B3B3B;
+  margin: 0 0 40px 0;
+  text-decoration: underline;
+}
+#aboutMe p {
+  text-align: justify;
+}

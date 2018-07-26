@@ -101,7 +101,7 @@ class Home extends Component {
 		let MySection = components[this.props.match.params.section];
 		
 		return (
-			<section id="main">
+			<section id="main" className="container-fluid">
 				<section className={`menu ${this.state.split ? 'split' : ''}`}>
 					<div className="scene">
 						<div className={`cube show-${this.state.currentSide}`}>
@@ -116,20 +116,8 @@ class Home extends Component {
 					<canvas id="myCanvas" width="200" height="200"></canvas>
 				</section>
 				<section className={`description ${this.state.split ? 'split' : ''}`}>
-					{/*
-						this.state.split && <MySection />
-					*/}
 					<Route path='/best-website/:section' component={MySection} />
 				</section>
-				
-				{/*<iframe 
-					id="bach"
-					width="1" 
-					height="1" 
-					src="https://www.youtube.com/embed/Lp39Z_76_n0?playlist=Lp39Z_76_n0&loop=1&autoplay=1" 
-					frameBorder="0" 
-					allow="autoplay; encrypted-media; loop" 
-				></iframe>*/}
 			</section>
 		);
 	}
