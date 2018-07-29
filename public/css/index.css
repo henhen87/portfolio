@@ -6726,6 +6726,11 @@ section#main {
   height: 100vh;
 }
 section#main #navb {
+  background-color: #FFF;
+  z-index: 1000;
+  border-bottom: solid 2px;
+  -webkit-box-shadow: 2px 2px 30px 7px #3B3B3B;
+          box-shadow: 2px 2px 30px 7px #3B3B3B;
   position: absolute;
   top: 0;
   left: 0;
@@ -6749,6 +6754,8 @@ section#main .title h1 {
   text-align: center;
 }
 section#main section.menu {
+  background-color: #ee5522;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 200 200'%3E%3Cdefs%3E%3ClinearGradient id='a' gradientUnits='userSpaceOnUse' x1='100' y1='33' x2='100' y2='-3'%3E%3Cstop offset='0' stop-color='%23000' stop-opacity='0'/%3E%3Cstop offset='1' stop-color='%23000' stop-opacity='1'/%3E%3C/linearGradient%3E%3ClinearGradient id='b' gradientUnits='userSpaceOnUse' x1='100' y1='135' x2='100' y2='97'%3E%3Cstop offset='0' stop-color='%23000' stop-opacity='0'/%3E%3Cstop offset='1' stop-color='%23000' stop-opacity='1'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cg fill='%23ca481d' fill-opacity='0.6'%3E%3Crect x='100' width='100' height='100'/%3E%3Crect y='100' width='100' height='100'/%3E%3C/g%3E%3Cg fill-opacity='0.5'%3E%3Cpolygon fill='url(%23a)' points='100 30 0 0 200 0'/%3E%3Cpolygon fill='url(%23b)' points='100 100 0 130 0 100 200 100 200 130'/%3E%3C/g%3E%3C/svg%3E");
   position: relative;
 }
 section#main section.menu .scene {
@@ -6930,6 +6937,7 @@ section#main section.description.split {
   right: 0;
   width: 50px;
   border: solid 2px #ECECEC;
+  border-right: none;
 }
 #musicPlayer div {
   cursor: pointer;
@@ -6942,8 +6950,48 @@ section#main section.description.split {
   display: inline-block;
   font-size: 20px;
 }
+#musicPlayer div.stop {
+  font-size: 35px;
+}
 #musicPlayer div.back,
 #musicPlayer div.forward {
   letter-spacing: -16px;
   padding-right: 17px;
+}
+#musicPlayer .control:hover {
+  -webkit-animation-name: pulse;
+          animation-name: pulse;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+}
+#musicPlayer .pulse {
+  display: inline-block;
+  -webkit-transform: translateZ(0);
+          transform: translateZ(0);
+  -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+          box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+}
+@-webkit-keyframes pulse {
+  25% {
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+  }
+  75% {
+    -webkit-transform: scale(0.8);
+            transform: scale(0.8);
+  }
+}
+@keyframes pulse {
+  25% {
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+  }
+  75% {
+    -webkit-transform: scale(0.8);
+            transform: scale(0.8);
+  }
 }

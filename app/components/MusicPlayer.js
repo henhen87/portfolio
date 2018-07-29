@@ -8,16 +8,16 @@ class MusicPlayer extends Component {
 	render () {
 		return (
 			<div id="musicPlayer" className="mp3">
-				<div className="back" onClick={e => {
+				<div className="control back" onClick={e => {
 					e.preventDefault();
 					player.previousVideo();
 				}}>&#x025C2;&#x025C3;</div>
-				<div className="stop" onClick={e => {
+				<div className="control stop" onClick={e => {
 					e.preventDefault();
 					this.setState({ pause: false });
 					player.stopVideo();
 				}}>&#x025AA;</div>
-				<div className="play" onClick={e => {
+				<div className="control play" onClick={e => {
 					e.preventDefault();
 					console.log('EEEE')
 					this.setState({ pause: !this.state.pause }, () => {
@@ -29,7 +29,7 @@ class MusicPlayer extends Component {
 					});
 					player.playVideo();
 				}}>{this.state.pause === true ? <span>&#x025B8;</span> : <span className="pause">=</span>}</div>
-				<div className="forward" onClick={e => {
+				<div className="control forward" onClick={e => {
 					e.preventDefault();
 					player.nextVideo();
 				}}>&#x025B9;&#x025B8;</div>
