@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 // import { Switch, Route, Link } from 'react-router-dom';
 import Sections from 'components/Sections';
 import Navbar from 'components/Navbar';
+import MusicPlayer from 'components/MusicPlayer';
 
 const components = {
 	about: Sections.About,
@@ -90,6 +91,7 @@ class Home extends Component {
 		return (
 			<section id="main">
 				<Navbar />
+				<MusicPlayer />
 				<section className={`menu ${this.state.split ? 'split' : ''}`}>
 					<div className="scene">
 						<div className={`cube show-${this.state.currentSide}`}>
