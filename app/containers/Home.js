@@ -18,8 +18,7 @@ class Home extends Component {
 			sides: ['front', 'right', 'left', 'bottom', 'top', 'back'],
 			pause: false,
 			currentSide: '',
-			split: false,
-			currentSection: null
+			split: false
 		}
 
 		this.state.sides.forEach(e => {
@@ -28,7 +27,6 @@ class Home extends Component {
 	}
 
 	componentDidMount () {
-		let sections = ['About Me', 'Resume', 'Music', 'Contact Me', 'Projects',  'Skills'];
 		//ball
 		let index = 0;
 		let canvas = document.getElementById("myCanvas");
@@ -105,7 +103,6 @@ class Home extends Component {
 						</div>
 					</div>
 					<canvas id="myCanvas" width="200" height="200"></canvas>
-					<h1>{this.state.currentSection}</h1>
 				</section>
 				<section className={`description ${this.state.split ? 'split' : ''}`}>
 					<Route path='/best-website/:section' component={MySection} />
