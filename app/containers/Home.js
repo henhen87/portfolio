@@ -62,8 +62,7 @@ class Home extends Component {
 		setInterval(() => {
 			if (this.state.pause === false) {
 				this.setState({ 
-					currentSide: this.state.sides[index],
-					currentSection: sections[index] 
+					currentSide: this.state.sides[index]
 				});
 				index++;
 			}
