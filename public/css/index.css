@@ -6866,6 +6866,7 @@ section#main section.menu .cube__face--bottom {
           transform: rotateX(-90deg) translateZ(100px);
 }
 section#main section.menu.split {
+  border-right: solid 10px #3b3b3b;
   width: 30%;
   float: left;
 }
@@ -6912,7 +6913,7 @@ section#main section.description.split {
   text-align: justify;
 }
 #aboutMe .img-frame {
-  width: 30%;
+  width: 40%;
   float: left;
   margin: 0 20px 20px 0;
   border: solid thin #AFAFAF;
