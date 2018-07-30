@@ -5,7 +5,7 @@
 		}
 		height: 100%;
 	}
-	&:hover {
+	&.showNav {
 		height: 40px;
 		opacity: 1;
 	}
@@ -19,10 +19,15 @@
 	width: 100%;
 	height: 0;
 	opacity: 0;
-	transition: all 1s ease-in;
+	transition: all 500ms ease-out;
 	text-align: center;
 }
 .arrowDown {
+	&.hideArrowDown {
+		animation: none;
+		opacity: 0;
+		display: none;
+	}
 	font-size: 40px;
 	position: absolute;
 	width: auto;
@@ -36,6 +41,8 @@
 	text-shadow: 5px 5px 15px black;
 	animation: arrowPulse 2s infinite;
 	transform: translateZ(0);
+	opacity: 1;
+	transition: all 1s ease-in;
 }
 
 @keyframes arrowPulse {

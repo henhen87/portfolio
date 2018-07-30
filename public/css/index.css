@@ -6988,8 +6988,8 @@ section#main section.description.split {
   width: 100%;
   height: 0;
   opacity: 0;
-  -webkit-transition: all 1s ease-in;
-  transition: all 1s ease-in;
+  -webkit-transition: all 500ms ease-out;
+  transition: all 500ms ease-out;
   text-align: center;
 }
 #navb .row {
@@ -6998,7 +6998,7 @@ section#main section.description.split {
 #navb .row div[class^="col-"] {
   height: 100%;
 }
-#navb:hover {
+#navb.showNav {
   height: 40px;
   opacity: 1;
 }
@@ -7018,6 +7018,15 @@ section#main section.description.split {
           animation: arrowPulse 2s infinite;
   -webkit-transform: translateZ(0);
           transform: translateZ(0);
+  opacity: 1;
+  -webkit-transition: all 1s ease-in;
+  transition: all 1s ease-in;
+}
+.arrowDown.hideArrowDown {
+  -webkit-animation: none;
+          animation: none;
+  opacity: 0;
+  display: none;
 }
 @-webkit-keyframes arrowPulse {
   0% {
