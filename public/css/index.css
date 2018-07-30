@@ -7002,7 +7002,7 @@ section#main section.description.split {
   height: 40px;
   opacity: 1;
 }
-.arrowDown {
+.arrow {
   font-size: 40px;
   position: absolute;
   width: auto;
@@ -7019,14 +7019,19 @@ section#main section.description.split {
   -webkit-transform: translateZ(0);
           transform: translateZ(0);
   opacity: 1;
-  -webkit-transition: all 1s ease-in;
-  transition: all 1s ease-in;
+  -webkit-transition: all 400ms ease-out;
+  transition: all 400ms ease-out;
 }
-.arrowDown.hideArrowDown {
+.arrow.hideArrowDown {
   -webkit-animation: none;
           animation: none;
   opacity: 0;
   display: none;
+}
+.arrow.arrowUp {
+  top: 45px;
+  color: #4dff4d;
+  text-shadow: 5px 5px 15px #e600e6;
 }
 @-webkit-keyframes arrowPulse {
   0% {

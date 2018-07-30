@@ -22,11 +22,16 @@
 	transition: all 500ms ease-out;
 	text-align: center;
 }
-.arrowDown {
+.arrow {
 	&.hideArrowDown {
 		animation: none;
 		opacity: 0;
 		display: none;
+	}
+	&.arrowUp {
+		top: 45px;
+		color: lighten(green, 40%);
+		text-shadow: 5px 5px 15px lighten(purple, 20%);
 	}
 	font-size: 40px;
 	position: absolute;
@@ -42,7 +47,7 @@
 	animation: arrowPulse 2s infinite;
 	transform: translateZ(0);
 	opacity: 1;
-	transition: all 1s ease-in;
+	transition: all 400ms ease-out;
 }
 
 @keyframes arrowPulse {
