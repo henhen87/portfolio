@@ -6998,6 +6998,14 @@ section#main section.description.split {
 #navb .row div[class^="col-"] {
   height: 100%;
 }
+#navb .row div[class^="col-"] div {
+  color: #6666ff;
+  text-shadow: 1px 1px 5px #3b3b3b;
+  cursor: pointer;
+}
+#navb .row div[class^="col-"] div:hover {
+  text-decoration: underline;
+}
 #navb.showNav {
   height: 40px;
   opacity: 1;
