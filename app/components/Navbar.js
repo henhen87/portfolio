@@ -3,7 +3,8 @@ import { Link } from 'react-router-dom';
 
 class Navbar extends Component {
 	render () {
-		return (
+		return [
+			<div className="arrowDown">&#x02913;</div>,
 			<div id="navb" className="container-fluid">
 				<div className="row">
 					<div className="col-sm-2">
@@ -26,7 +27,7 @@ class Navbar extends Component {
 					</div>
 				</div>
 			</div>
-		);
+		];
 	}
 }
 

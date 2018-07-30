@@ -6725,25 +6725,6 @@ section#main {
   position: relative;
   height: 100vh;
 }
-section#main #navb {
-  background-color: #FFF;
-  z-index: 1000;
-  border-bottom: solid 2px;
-  -webkit-box-shadow: 2px 2px 30px 7px #3B3B3B;
-          box-shadow: 2px 2px 30px 7px #3B3B3B;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 40px;
-  text-align: center;
-}
-section#main #navb .row {
-  height: 100%;
-}
-section#main #navb .row div[class^="col-"] {
-  height: 100%;
-}
 section#main section {
   height: 100%;
   width: 100%;
@@ -6993,5 +6974,82 @@ section#main section.description.split {
   75% {
     -webkit-transform: scale(0.8);
             transform: scale(0.8);
+  }
+}
+#navb {
+  background-color: #FFF;
+  z-index: 1000;
+  border-bottom: solid 2px;
+  -webkit-box-shadow: 2px 2px 30px 7px #3B3B3B;
+          box-shadow: 2px 2px 30px 7px #3B3B3B;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  opacity: 0;
+  -webkit-transition: all 1s ease-in;
+  transition: all 1s ease-in;
+  text-align: center;
+}
+#navb .row {
+  height: 100%;
+}
+#navb .row div[class^="col-"] {
+  height: 100%;
+}
+#navb:hover {
+  height: 40px;
+  opacity: 1;
+}
+.arrowDown {
+  font-size: 40px;
+  position: absolute;
+  width: auto;
+  height: auto;
+  top: 0;
+  left: 50%;
+  margin-left: -10px;
+  cursor: pointer;
+  z-index: 1000;
+  color: #FFF;
+  text-shadow: 5px 5px 15px black;
+  -webkit-animation: arrowPulse 2s infinite;
+          animation: arrowPulse 2s infinite;
+  -webkit-transform: translateZ(0);
+          transform: translateZ(0);
+}
+@-webkit-keyframes arrowPulse {
+  0% {
+    text-shadow: 0 0 0 black;
+    -webkit-transform: scale(0.5);
+            transform: scale(0.5);
+  }
+  70% {
+    text-shadow: 5px 5px 15px black;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  100% {
+    text-shadow: 0 0 0 black;
+    -webkit-transform: scale(0.5);
+            transform: scale(0.5);
+  }
+}
+@keyframes arrowPulse {
+  0% {
+    text-shadow: 0 0 0 black;
+    -webkit-transform: scale(0.5);
+            transform: scale(0.5);
+  }
+  70% {
+    text-shadow: 5px 5px 15px black;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  100% {
+    text-shadow: 0 0 0 black;
+    -webkit-transform: scale(0.5);
+            transform: scale(0.5);
   }
 }
