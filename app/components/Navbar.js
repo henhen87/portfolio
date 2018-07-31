@@ -15,7 +15,7 @@ class Navbar extends Component {
 
 		this.setState({ showNav: !this.state.showNav });
 	}
-	
+
 	render () {
 		return [
 			<div 
@@ -28,37 +28,37 @@ class Navbar extends Component {
 					<div className="col-sm-2">
 						<div data-value="about" onClick={e => {
 							e.preventDefault();
-							this.props.split(e, 0)
+							this.props.split(e, '0');
 						}}>About Me</div>
 					</div>
 					<div className="col-sm-2">
 						<div data-value="resume" onClick={e => {
 							e.preventDefault();
-							this.props.split(e, 1)
+							this.props.split(e, '1');
 						}}>Resume</div>
 					</div>
 					<div className="col-sm-2">
 						<div data-value="music" onClick={e => {
 							e.preventDefault();
-							this.props.split(e, 2)
+							this.props.split(e, 2);
 						}}>Music</div>
 					</div>
 					<div className="col-sm-2">
 						<div data-value="contact" onClick={e => {
 							e.preventDefault();
-							this.props.split(e, 3)
+							this.props.split(e, 3);
 						}}>Contact Me</div>
 					</div>
 					<div className="col-sm-2">
 						<div data-value="projects" onClick={e => {
 							e.preventDefault();
-							this.props.split(e, 4)
+							this.props.split(e, 4);
 						}}>Projects</div>
 					</div>
 					<div className="col-sm-2">
 						<div data-value="skills" onClick={e => {
 							e.preventDefault();
-							this.props.split(e, 5)
+							this.props.split(e, 5);
 						}}>Skills</div>
 					</div>
 				</div>
