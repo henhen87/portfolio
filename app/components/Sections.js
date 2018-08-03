@@ -2,6 +2,27 @@ import React, { Component } from 'react';
 
 
 const Sections = {
+	Contact: class Contact extends Component {
+		render () {
+			return (
+				<form>
+					<div className="form-group">
+						<label htmlFor="name">Name</label>
+						<input type="text" name="name"/>
+					</div>
+					<div className="form-group">
+						<label htmlFor="email">Email</label>
+						<input type="text" name="email"/>
+					</div>
+					<div className="form-group">
+						<label htmlFor="message">Message</label>
+						<textarea name="message" id="message" cols="30" rows="10"></textarea>
+					</div>
+					<button type="button">Submit</button>
+				</form>
+			);
+		}
+	},
 	Skills: class Skills extends Component {
 		render () {
 			return (
