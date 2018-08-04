@@ -2,6 +2,24 @@ import React, { Component } from 'react';
 
 
 const Sections = {
+	Projects: class Projects extends Component {
+		render () {
+			return (
+				<div className="projects">
+
+				</div>
+			);
+		}
+	},
+	Music: class Music extends Component {
+		render () {
+			return (
+				<div className="musicPlayer">
+
+				</div>
+			);
+		}
+	},
 	Contact: class Contact extends Component {
 		render () {
 			return (
