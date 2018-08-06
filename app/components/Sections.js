@@ -2,6 +2,15 @@ import React, { Component } from 'react';
 
 
 const Sections = {
+	Resume: class Resume extends Component {
+		render () {
+			return (
+				<div className="resume">
+
+				</div>
+			);
+		}
+	},
 	Projects: class Projects extends Component {
 		render () {
 			return (
