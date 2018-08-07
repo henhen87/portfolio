@@ -73,7 +73,7 @@ const Sections = {
 				<div id="aboutMe">
 					<h1>About Me</h1>
 					<div className="img-frame">
-						<img className="img-responsive" src="/img/p4.jpg" alt="Loading..."/>
+						<img className="img-responsive" src="/img/goofy.jpg" alt="Loading..."/>
 					</div>
 					<p>Hello,<br/><br/> My name is Henry Lee. My goal in life is to become a game programmer and make awesome video
 					games millions of people will enjoy. That being said, as a programmer, I do not limit myself to just topics
