@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 // import { Switch, Route, Link } from 'react-router-dom';
 import Sections from 'components/Sections';
 import Navbar from 'components/Navbar';
+import Footer from 'components/Footer';
 import MusicPlayer from 'components/MusicPlayer';
 
 const components = {
@@ -133,6 +134,7 @@ class Home extends Component {
 				<section className={`description ${this.state.split ? 'split' : ''}`}>
 					<Route path='/best-website/:section' component={MySection} />
 				</section>
+				<Footer />
 			</section>
 		);
 	}
