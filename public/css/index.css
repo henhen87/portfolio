@@ -7083,16 +7083,24 @@ section#main section.description.split {
   background: transparent;
   text-align: center;
 }
-.footer img {
-  width: 30px;
-  height: 30px;
+.footer a {
+  display: inline-block;
+  position: relative;
+  margin: 0 15px;
 }
-.footer img span {
+.footer a:hover span {
+  display: block;
+}
+.footer a span {
   display: none;
   font-size: 12px;
   color: #FFF;
   background: #000000;
+  position: absolute;
+  top: -10px;
+  left: 35px;
 }
-.footer a:hover span {
-  display: block;
+.footer img {
+  width: 30px;
+  height: 30px;
 }
