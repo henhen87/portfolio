@@ -29,13 +29,18 @@
 		}
 
 		function onPlayerReady() {
-			player.loadPlaylist([
-				'h6bwoSQjYjo',
-				'BA3sErkpxPw',
-				'nZ8JnVB7R_0',
-				'rNU9NPhX90M',
-				'0YyP-kKN1ao'
-			]);
+			new Promise((res, rej) => {
+				player.loadPlaylist([
+					'SfeUDj_53D0'
+				]);
+				res();
+			}).then((res) => {
+				setTimeout(() => {
+					player.stopVideo();
+				}, 95000)
+			}).catch((rej) => {
+				console.log('Err', rej);
+			});
 		}
 	</script>
 	<script src="/js/index.js"></script>
