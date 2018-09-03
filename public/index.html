@@ -29,19 +29,10 @@
 		}
 
 		function onPlayerReady() {
-			new Promise((res, rej) => {
-				player.loadPlaylist([
-					'V5YOhcAof8I',
-					'XmKoFkD_k1I'
-				]);
-				res();
-			}).then((res) => {
-				setTimeout(() => {
-					player.stopVideo();
-				}, 98000)
-			}).catch((rej) => {
-				console.log('Err', rej);
-			});
+			player.loadPlaylist([
+				'V5YOhcAof8I',
+				'XmKoFkD_k1I'
+			]);
 		}
 	</script>
 	<script src="/js/index.js"></script>
