@@ -101,35 +101,35 @@ class Home extends Component {
 				<Navbar split={this.split} />
 				<MusicPlayer />
 				<section className={`menu ${this.state.split ? 'split' : ''}`}>
-					{/*<div className="scene">
-											<div className={`cube show-${this.state.currentSide}`}>
-												<div onClick={e => {
-													e.preventDefault();
-													this.split(e);
-												}} data-value="about" className="cube__face cube__face--front">About Me</div>
-												<div onClick={e => {
-													e.preventDefault();
-													this.split(e);
-												}} data-value="skills" className="cube__face cube__face--back">Skills</div>
-												<div onClick={e => {
-													e.preventDefault();
-													this.split(e);
-												}} data-value="resume" className="cube__face cube__face--right">Resume</div>
-												<div onClick={e => {
-													e.preventDefault();
-													this.split(e);
-												}} data-value="music" className="cube__face cube__face--left">Music</div>
-												<div onClick={e => {
-													e.preventDefault();
-													this.split(e);
-												}} data-value="projects" className="cube__face cube__face--top">Projects</div>
-												<div onClick={e => {
-													e.preventDefault();
-													this.split(e);
-												}} data-value="contact" className="cube__face cube__face--bottom">Contact Me</div>
-											</div>
-										</div>
-										<canvas id="myCanvas" width="200" height="200"></canvas>*/}
+					<div className="scene">
+						<div className={`cube show-${this.state.currentSide}`}>
+							<div onClick={e => {
+								e.preventDefault();
+								this.split(e);
+							}} data-value="about" className="cube__face cube__face--front">About Me</div>
+							<div onClick={e => {
+								e.preventDefault();
+								this.split(e);
+							}} data-value="skills" className="cube__face cube__face--back">Skills</div>
+							<div onClick={e => {
+								e.preventDefault();
+								this.split(e);
+							}} data-value="resume" className="cube__face cube__face--right">Resume</div>
+							<div onClick={e => {
+								e.preventDefault();
+								this.split(e);
+							}} data-value="music" className="cube__face cube__face--left">Music</div>
+							<div onClick={e => {
+								e.preventDefault();
+								this.split(e);
+							}} data-value="projects" className="cube__face cube__face--top">Projects</div>
+							<div onClick={e => {
+								e.preventDefault();
+								this.split(e);
+							}} data-value="contact" className="cube__face cube__face--bottom">Contact Me</div>
+						</div>
+					</div>
+					<canvas id="myCanvas" width="200" height="200"></canvas>
 				</section>
 				<section className={`description ${this.state.split ? 'split' : ''}`}>
 					<Route path='/best-website/:section' component={MySection} />
