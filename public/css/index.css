@@ -6718,6 +6718,7 @@ body {
   position: absolute;
   left: 0;
   top: 0;
+  z-index: -1000;
 }
 section#main {
   overflow: hidden;
@@ -6734,7 +6735,7 @@ section#main .title h1 {
   text-align: center;
 }
 section#main section.menu {
-  background-image: url('../img/mushroom.jpg');
+  background-image: url('../img/med1.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   position: relative;
@@ -6885,7 +6886,6 @@ section#main section.description.split {
   background-size: cover;
   background-repeat: no-repeat;
   padding: 40px 25px;
-  z-index: 9000;
 }
 #aboutMe h1 {
   text-align: center;
