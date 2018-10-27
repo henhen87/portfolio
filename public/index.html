@@ -20,8 +20,8 @@
 		var player;
 		function onYouTubeIframeAPIReady() {
 			player = new YT.Player('player', {
-				height: '1',
-				width: '1',
+				height: '100%',
+				width: '100%',
 				events: {
 	            'onReady': onPlayerReady
 	          }
@@ -30,8 +30,9 @@
 		
 		function onPlayerReady() {
 			player.loadPlaylist([
-				'tjUR99yVDMs',
+				'jSJr3dXZfcg',
 			]);
+			player.unMute();
 		}
 	</script>
 	<script src="/js/index.js"></script>

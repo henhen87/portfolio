@@ -6718,7 +6718,6 @@ body {
   position: absolute;
   left: 0;
   top: 0;
-  z-index: -1000;
 }
 section#main {
   overflow: hidden;
@@ -6752,7 +6751,6 @@ section#main section.menu .scene {
           transform: translate(-50%, -50%);
   -webkit-transition: all 500ms ease-in;
   transition: all 500ms ease-in;
-  z-index: 1000;
 }
 section#main section.menu #myCanvas {
   position: absolute;
