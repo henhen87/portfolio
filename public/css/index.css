@@ -6719,7 +6719,46 @@ body {
   left: 0;
   top: 0;
 }
+iframe {
+  z-index: -10000;
+}
+.hh {
+  z-index: 10000;
+  width: 100%;
+  position: fixed;
+  -webkit-animation: fadeoutt 4s;
+          animation: fadeoutt 4s;
+  opacity: 0;
+}
+@-webkit-keyframes fadeoutt {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+@keyframes fadeoutt {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+.moon {
+  width: 50%;
+  float: right;
+  margin-top: 66px;
+}
+.lan {
+  width: 25%;
+  position: absolute;
+  bottom: 66px;
+  left: 66px;
+}
 section#main {
+  background: black;
   overflow: hidden;
   position: relative;
   height: 100vh;
