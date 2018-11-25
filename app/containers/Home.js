@@ -6,10 +6,10 @@ import Navbar from 'components/Navbar';
 import Footer from 'components/Footer';
 import MusicPlayer from 'components/MusicPlayer';
 
-const components = {
-	about: Sections.About,
-	skills: Sections.Skills
-};
+// const components = {
+// 	about: Sections.About,
+// 	skills: Sections.Skills
+// };
 
 class Home extends Component {
 	// constructor (props) {
@@ -22,6 +22,27 @@ class Home extends Component {
 	// 		currentSide: '',
 	// 		split: false
 	// 	}
+	state = {
+		max: 0,
+		mute: 0,
+		switchSlides: false
+	}
+
+	interval = () => {
+		// if (this.state.max !=== 17) {
+
+		// }
+
+		this.setState({
+			max: this.state.max !== 17 ? this.state.max + 1 : this.state.max,
+			mute: 0,
+			switchSlides: !this.state.switchSlides,
+		}, () => this.state.switchSlides ? this.setState({mute: 1}) : null);
+	}
+
+	componentDidMount = () => {
+		setInterval(this.interval, 17000)
+	}
 
 	// 	this.state.sides.forEach(e => {
 	// 		this[e] = React.createRef();
@@ -135,7 +156,35 @@ class Home extends Component {
 					<Route path='/best-website/:section' component={MySection} />
 				</section>
 				<Footer />*/}
-				<iframe src="http://pluto.tv/watch/the-surf-channel?autoplay=1" width="100%" height="100%" frameBorder="0" style={{zIndex: 9999999}}></iframe>
+				<iframe 
+					width="100%" 
+					height="100%" 
+					className={`${this.state.max === 20 ? 'hide' : null}`}
+					src="https://www.youtube.com/embed/kcRuVwgOXI4?autoplay=1" 
+					frameBorder="0" 
+					allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+					allowFullScreen
+					style={{zIndex: 9999999}}></iframe>
+
+				{this.state.max === 20 
+					? this.state.switchSlides ? (
+						<iframe 
+							width="100%" 
+							height="100%" 
+							src="https://www.youtube.com/embed/qAcY8OPEMhA?autoplay=1" 
+							frameBorder="0" 
+							allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+							style={{zIndex: 9999999}} 
+							allowFullScreen></iframe>
+						) : (
+						<iframe 
+							src="https://weather.com/weather/hourbyhour/l/USCA0638:1:US" 
+							width="100%" 
+							height="100%" 
+							frameBorder="0" 
+							style={{zIndex: 9999999}}></iframe>
+					) : null
+				}
 			</section>
 		);
 	}
