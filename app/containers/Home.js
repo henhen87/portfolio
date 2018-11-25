@@ -28,20 +28,28 @@ class Home extends Component {
 		switchSlides: false
 	}
 
-	interval = () => {
-		// if (this.state.max !=== 17) {
+	maxInterval
 
-		// }
-
+	setMax = () => {
 		this.setState({
-			max: this.state.max !== 17 ? this.state.max + 1 : this.state.max,
+			max: this.state.max !== 20 ? this.state.max + 1 : this.state.max,
+		});
+	}
+
+	interval = () => {
+		console.log('INSIDE SET INTERVAL')
+		this.setState({
 			mute: 0,
 			switchSlides: !this.state.switchSlides,
-		}, () => this.state.switchSlides ? this.setState({mute: 1}) : null);
+		});
+		// this.state.switchSlides ? this.setState({mute: 1}) : null
 	}
 
 	componentDidMount = () => {
-		setInterval(this.interval, 17000)
+		console.log('INSIDE DID MOUNTTT')
+		this.maxInterval = setInterval(this.setMax, 1000);
+		console.log('MAX', this.maxInterval)
+		setInterval(this.interval, 17000);
 	}
 
 	// 	this.state.sides.forEach(e => {
@@ -166,24 +174,22 @@ class Home extends Component {
 					allowFullScreen
 					style={{zIndex: 9999999}}></iframe>
 
-				{this.state.max === 20 
-					? this.state.switchSlides ? (
-						<iframe 
-							width="100%" 
-							height="100%" 
-							src="https://www.youtube.com/embed/qAcY8OPEMhA?autoplay=1" 
-							frameBorder="0" 
-							allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-							style={{zIndex: 9999999}} 
-							allowFullScreen></iframe>
-						) : (
-						<iframe 
-							src="https://weather.com/weather/hourbyhour/l/USCA0638:1:US" 
-							width="100%" 
-							height="100%" 
-							frameBorder="0" 
-							style={{zIndex: 9999999}}></iframe>
-					) : null
+				<iframe 
+					width="100%" 
+					height="100%"
+					className={this.state.max === 20 && this.state.switchSlides ? 'show' : 'hide'} 
+					src="https://www.youtube.com/embed/qAcY8OPEMhA?autoplay=1&mute=1" 
+					frameBorder="0" 
+					allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+					style={{zIndex: 9999999}} 
+					allowFullScreen></iframe>
+				<iframe 
+					src="https://weather.com/weather/hourbyhour/l/USCA0638:1:US" 
+					width="100%" 
+					height="100%" 
+					className={this.state.max === 20 && this.state.switchSlides ? 'hide' : 'show'} 
+					frameBorder="0" 
+					style={{zIndex: 9999999}}></iframe>
 				}
 			</section>
 		);

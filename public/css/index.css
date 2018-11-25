@@ -6719,6 +6719,12 @@ body {
   left: 0;
   top: 0;
 }
+.show {
+  display: block;
+}
+.hide {
+  display: none;
+}
 section#main {
   overflow: hidden;
   position: relative;
