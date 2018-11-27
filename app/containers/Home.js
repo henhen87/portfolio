@@ -177,7 +177,7 @@ class Home extends Component {
 				<iframe 
 					width="100%" 
 					height="100%"
-					className={`video ${this.state.max === 20 && this.state.switchSlides ? '' : 'fade'}`} 
+					className={this.state.max === 20 && this.state.switchSlides ? 'show' : 'hide'} 
 					src="https://www.youtube.com/embed/qAcY8OPEMhA?autoplay=1&mute=1" 
 					frameBorder="0" 
 					allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
@@ -187,7 +187,7 @@ class Home extends Component {
 					src="https://weather.com/weather/hourbyhour/l/USCA0638:1:US" 
 					width="100%" 
 					height="100%" 
-					className={`video ${this.state.max === 20 && !this.state.switchSlides ? 'show' : 'hide'}`} 
+					className={this.state.max === 20 && this.state.switchSlides ? 'hide' : 'show'} 
 					frameBorder="0" 
 					style={{zIndex: 9999999}}></iframe>
 				}
