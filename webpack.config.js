@@ -3,8 +3,6 @@ const fs      = require('fs');
 const appRoot = fs.realpathSync(process.cwd());
 const appModules = path.resolve(appRoot, 'node_modules')
 
-console.log('APP ROOT', appRoot);
-
 module.exports = {
   entry: "./app/index.js",
   output: {
