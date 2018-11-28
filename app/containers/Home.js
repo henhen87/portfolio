@@ -164,15 +164,7 @@ class Home extends Component {
 					<Route path='/best-website/:section' component={MySection} />
 				</section>
 				<Footer />*/}
-				<iframe 
-					width="100%" 
-					height="100%" 
-					className={`${this.state.max === 20 ? 'hide' : null}`}
-					src="https://www.youtube.com/embed/kcRuVwgOXI4?start=0&autoplay=1" 
-					frameBorder="0" 
-					allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
-					allowFullScreen
-					style={{zIndex: 9999999}}></iframe>
+				
 
 				<iframe 
 					width="100%" 
