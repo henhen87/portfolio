@@ -28,9 +28,7 @@
 
 			const tag = document.createElement('script');
 			tag.src = "https://www.youtube.com/iframe_api";
-			console.log('TAGGG', tag)
 			const firstScriptTag = document.getElementsByTagName('script')[0];
-			console.log('FIRST TAG SCRUIPT', firstScriptTag)
 			firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
 			var player;
