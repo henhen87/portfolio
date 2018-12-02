@@ -11,69 +11,31 @@
   	<div id="root"></div>
   	<div id="player"></div>
 	<script>
-		;(function() {
-			var counter = 0;
-			const counterDown = setInterval(() => {
-				counter++;
-				console.log('Inside ingterval', counter);
-				if (counter === 20) {
-					const player = document.querySelector('#player');
-					player.classList.add('hide')
-				}
-			}, 1000)
+		const tag = document.createElement('script');
+		tag.src = "https://www.youtube.com/iframe_api";
+		const firstScriptTag = document.getElementsByTagName('script')[0];
+		firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
-			if (counter === 20) {
-				clearInterval(counterDown);
-			}
+		var player;
+		function onYouTubeIframeAPIReady() {
+			console.log(1111111111)
+			player = new YT.Player('player', {
+				height: '100%',
+				width: '100%',
+				events: {
+		        'onReady': onPlayerReady
+		      }
+			});
+		}
 
-			const tag = document.createElement('script');
-			tag.src = "https://www.youtube.com/iframe_api";
-			const firstScriptTag = document.getElementsByTagName('script')[0];
-			firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-
-			var player;
-			function onYouTubeIframeAPIReady() {
-				console.log(1111111111)
-				player = new YT.Player('player', {
-					height: '100%',
-					width: '100%',
-					events: {
-			        'onReady': onPlayerReady
-			      }
-				});
-			}
-
-			function onPlayerReady() {
-				console.log(22222222)
-				player.loadPlaylist([
-					'_6HMD9_Wj88'
-				]);
-				player.unMute();
-			}
-		})();
+		function onPlayerReady() {
+			console.log(22222222)
+			player.loadPlaylist([
+				'Hfa7pg02dDE'
+			]);
+			player.unMute();
+		}
 	</script>
 	<script src="/js/index.js"></script>
 </body>
 </html>
-
-<!-- '3pLWskANffo',
-'9fJ66hmNwWQ',
-'e-ORhEE9VVg',
-'IdneKLhsWOQ',
-'nPkde09L2ng',
-'cFWqLLaMOFs',
-'1Srh3iPZBVY',
-'0YyP-kKN1ao',
-'qt1eWvpkq3Y',
-'rNU9NPhX90M',
-'wsl-KHGe4Kk',
-'i62npxLUYl0',
-'TLvzz1ePBjQ',
-'_YBa9Pkk1a8',
-'MR8NtFuDr5c',
-'sGNEKnvPxmk',
-'Wm58sGEdgAw',
-'lXWq3f01e2U',
-'7EiDDDZZjv4', 
-'IwMEiuXE89U', 
-'Lp39Z_76_n0' -->

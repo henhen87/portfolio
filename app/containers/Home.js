@@ -164,24 +164,9 @@ class Home extends Component {
 					<Route path='/best-website/:section' component={MySection} />
 				</section>
 				<Footer />*/}
-				<iframe width="560" height="315" src="https://www.youtube.com/embed/-nVykDvt4KQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+				
 
-				<iframe 
-					width="100%" 
-					height="100%"
-					className={this.state.max === 20 && this.state.switchSlides ? 'show' : 'hide'} 
-					src="https://www.youtube.com/embed/qAcY8OPEMhA?autoplay=1&mute=1" 
-					frameBorder="0" 
-					allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-					style={{zIndex: 9999999}} 
-					allowFullScreen></iframe>
-				<iframe 
-					src="https://weather.com/weather/hourbyhour/l/USCA0638:1:US" 
-					width="100%" 
-					height="100%" 
-					className={this.state.max === 20 && this.state.switchSlides ? 'hide' : 'show'} 
-					frameBorder="0" 
-					style={{zIndex: 9999999}}></iframe>
+			
 				}
 			</section>
 		);
