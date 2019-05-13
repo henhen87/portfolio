@@ -134,8 +134,8 @@ class Home extends Component {
 		
 		return (
 			<section id="main">
-				{/*<Navbar split={this.split} />
 				<MusicPlayer />
+				{/*<Navbar split={this.split} />
 				<section className={`menu ${this.state.split ? 'split' : ''}`}>
 					<div className="scene">
 						<div className={`cube show-${this.state.currentSide}`}>

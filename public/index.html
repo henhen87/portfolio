@@ -23,17 +23,19 @@
 				height: '100%',
 				width: '100%',
 				events: {
-		        'onReady': onPlayerReady
-		      }
+	        'onReady': onPlayerReady
+	      }
 			});
 		}
 
-		function onPlayerReady() {
+		function onPlayerReady(e) {
 			player.loadPlaylist([
-				// 'r-F5tuQlPsQ',
-				'_qqvdOwoN-Y',
+				'FsxXxUOwRlE',
+				'AEgNebSjNyA',
+				'twZODj0yERs',
+				'cFWqLLaMOFs',
 			]);
-			player.playVideo();
+			e.target.playVideo();
 			player.unMute();
 		}
 	</script>
