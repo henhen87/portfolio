@@ -6,6 +6,33 @@ body {
   font-family: sans-serif; 
 }
 
+.introCard {
+  &.hide {
+    display: none;
+  }
+  h1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    text-align: center;
+    font-size: 55px;
+    color: orange;
+    width: 70%;
+    margin-left: -35%;
+    margin-top: -5%;
+    font-style: italic;
+    opacity: 1;
+    transition: opacity 1s;
+    &.hideTitle {
+      opacity: 0;
+    }
+  }
+  
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
 #bach, #player {
   position: absolute;
   left: 0;
@@ -13,23 +40,25 @@ body {
   // z-index: -1000;
 }
 
-.show {
-  display: block;
-}
-// .video {
+// .show {
 //   display: block;
-//   transition: all 2000ms;
 //   opacity: 1;
-//   &.unfade {
-//     opacity: 1;
-//   }
-//   &.fade {
-//     opacity: 0;
-//   }
 // }
-.hide {
-  display: none;
-}
+// // .video {
+// //   display: block;
+// //   transition: all 2000ms;
+// //   opacity: 1;
+// //   &.unfade {
+// //     opacity: 1;
+// //   }
+// //   &.fade {
+// //     opacity: 0;
+// //   }
+// // }
+// .hide {
+//   display: none;
+//   opacity: 0;
+// }
 
 section#main {
   section {

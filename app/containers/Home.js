@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Sections from 'components/Sections';
 import Navbar from 'components/Navbar';
 import Footer from 'components/Footer';
-import MusicPlayer from 'components/MusicPlayer';
+// import MusicPlayer from 'components/MusicPlayer';
 
 // const components = {
 // 	about: Sections.About,
@@ -23,40 +23,51 @@ class Home extends Component {
 	// 		split: false
 	// 	}
 	state = {
-		max: 0,
-		mute: 0,
-		switchSlides: false
+		// max: 0,
+		// mute: 0,
+		switchSlides: true,
+		hideTitle: false,
 	}
 
-	maxInterval
+	// maxInterval
 
-	setMax = () => {
-		this.setState({
-			max: this.state.max !== 20 ? this.state.max + 1 : this.state.max,
-		});
-	}
+	// setMax = () => {
+	// 	this.setState({
+	// 		max: this.state.max !== 20 ? this.state.max + 1 : this.state.max,
+	// 	});
+	// }
 
-	interval = () => {
-		console.log('INSIDE SET INTERVAL')
-		this.setState({
-			mute: 0,
-			switchSlides: !this.state.switchSlides,
-		});
-		// this.state.switchSlides ? this.setState({mute: 1}) : null
-	}
+	// interval = () => {
+	// 	console.log('INSIDE SET INTERVAL')
+	// 	this.setState({
+	// 		mute: 0,
+	// 		switchSlides: !this.state.switchSlides,
+	// 	});
+	// 	// this.state.switchSlides ? this.setState({mute: 1}) : null
+	// }
 
 	componentDidMount = () => {
-		console.log('INSIDE DID MOUNTTT')
-		this.maxInterval = setInterval(this.setMax, 1000);
-		console.log('MAX', this.maxInterval)
-		setInterval(this.interval, 17000);
-
 		setTimeout(() => {
-			console.log('INSIDE DID MOUNT TIMEOUT');
-			const p = document.querySelector('#player');
-			console.log('pppppp', p)
-			p.style.visibility = "hidden";
-		}, 7000)
+			this.setState({
+				hideTitle: !this.state.hideTitle,
+			});
+		}, 500);
+		setTimeout(() => {
+			this.setState({
+				switchSlides: !this.state.switchSlides,
+			});
+		}, 2500);
+		// console.log('INSIDE DID MOUNTTT')
+		// this.maxInterval = setInterval(this.setMax, 1000);
+		// console.log('MAX', this.maxInterval)
+		// setInterval(this.interval, 17000);
+
+		// setTimeout(() => {
+		// 	console.log('INSIDE DID MOUNT TIMEOUT');
+		// 	const p = document.querySelector('#player');
+		// 	console.log('pppppp', p)
+		// 	p.style.visibility = "hidden";
+		// }, 7000)
 	}
 
 	// 	this.state.sides.forEach(e => {
@@ -134,7 +145,7 @@ class Home extends Component {
 		
 		return (
 			<section id="main">
-				<MusicPlayer />
+				{/*I<MusicPlayer />*/}
 				{/*<Navbar split={this.split} />
 				<section className={`menu ${this.state.split ? 'split' : ''}`}>
 					<div className="scene">
@@ -171,22 +182,29 @@ class Home extends Component {
 					<Route path='/best-website/:section' component={MySection} />
 				</section>
 				<Footer />*/}
-				<iframe 
-					width="100%" 
-					height="100%"
-					className={this.state.max === 20 && this.state.switchSlides ? 'show' : 'hide'} 
-					src="https://www.youtube.com/embed/OWbI6WtlI-k?autoplay=1&mute=1" 
-					frameBorder="0" 
-					allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-					// style={{zIndex: 9999999}} 
-					allowFullScreen></iframe>
-				<iframe 
-					src="https://weather.com/weather/hourbyhour/l/USCA0638:1:US" 
-					width="100%" 
-					height="100%" 
-					className={this.state.max === 20 && this.state.switchSlides ? 'hide' : 'show'} 
-					frameBorder="0" 
-					></iframe>
+				{/*<iframe 
+									width="100%" 
+									height="100%"
+									className={this.state.max === 20 && this.state.switchSlides ? 'show' : 'hide'} 
+									src="https://www.youtube.com/embed/OWbI6WtlI-k?autoplay=1&mute=1" 
+									frameBorder="0" 
+									allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+									// style={{zIndex: 9999999}} 
+									allowFullScreen></iframe>
+								<iframe 
+									src="https://weather.com/weather/hourbyhour/l/USCA0638:1:US" 
+									width="100%" 
+									height="100%" 
+									className={this.state.max === 20 && this.state.switchSlides ? 'hide' : 'show'} 
+									frameBorder="0" 
+									></iframe>*/}
+					<div className={`introCard ${this.state.switchSlides === false && 'hide'}`}>
+						<h1 className={`${this.state.hideTitle === true && 'hideTitle'}`}>My Hero & Inspiration</h1>
+					</div>
+
+					<iframe width="100%" height="100%" src="https://www.youtube.com/embed/NvWTnIoQZj4?autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
 			</section>
 		);
 	}
