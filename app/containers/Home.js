@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Sections from 'components/Sections';
 import Navbar from 'components/Navbar';
 import Footer from 'components/Footer';
-// import MusicPlayer from 'components/MusicPlayer';
+import MusicPlayer from 'components/MusicPlayer';
 
 // const components = {
 // 	about: Sections.About,
@@ -28,7 +28,6 @@ class Home extends Component {
 		switchSlides: true,
 		hideTitle: false,
 	}
-
 	// maxInterval
 
 	// setMax = () => {
@@ -47,16 +46,7 @@ class Home extends Component {
 	// }
 
 	componentDidMount = () => {
-		setTimeout(() => {
-			this.setState({
-				hideTitle: !this.state.hideTitle,
-			});
-		}, 500);
-		setTimeout(() => {
-			this.setState({
-				switchSlides: !this.state.switchSlides,
-			});
-		}, 2500);
+		// console.log('PLAYER', player.getPlaylistIndex())
 		// console.log('INSIDE DID MOUNTTT')
 		// this.maxInterval = setInterval(this.setMax, 1000);
 		// console.log('MAX', this.maxInterval)
@@ -145,7 +135,7 @@ class Home extends Component {
 		
 		return (
 			<section id="main">
-				{/*I<MusicPlayer />*/}
+				<MusicPlayer />
 				{/*<Navbar split={this.split} />
 				<section className={`menu ${this.state.split ? 'split' : ''}`}>
 					<div className="scene">
@@ -198,13 +188,7 @@ class Home extends Component {
 									className={this.state.max === 20 && this.state.switchSlides ? 'hide' : 'show'} 
 									frameBorder="0" 
 									></iframe>*/}
-					<div className={`introCard ${this.state.switchSlides === false && 'hide'}`}>
-						<h1 className={`${this.state.hideTitle === true && 'hideTitle'}`}>My Hero & Inspiration</h1>
-					</div>
-
-					<iframe width="100%" height="100%" src="https://www.youtube.com/embed/NvWTnIoQZj4?autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-
+					{/*<iframe width="100%" height="100%" src="https://www.youtube.com/embed/vfc-73k9S-4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>*/}
 			</section>
 		);
 	}
