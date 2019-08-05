@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+// import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 // import { Switch, Route, Link } from 'react-router-dom';
-import Sections from 'components/Sections';
-import Navbar from 'components/Navbar';
-import Footer from 'components/Footer';
-import MusicPlayer from 'components/MusicPlayer';
+// import Sections from 'components/Sections';
+// import Navbar from 'components/Navbar';
+// import Footer from 'components/Footer';
+// import MusicPlayer from 'components/MusicPlayer';
 
 // const components = {
 // 	about: Sections.About,
@@ -23,23 +23,21 @@ class Home extends Component {
 	// 		split: false
 	// 	}
 	state = {
-		// max: 0,
+		max: 0,
 		// mute: 0,
 		switchSlides: true,
-		hideTitle: false,
 	}
 	// maxInterval
 
-	// setMax = () => {
-	// 	this.setState({
-	// 		max: this.state.max !== 20 ? this.state.max + 1 : this.state.max,
-	// 	});
-	// }
+	setMax = () => {
+		this.setState({
+			max: this.state.max <= 35 ? this.state.max + 1 : 0,
+		});
+	}
 
 	// interval = () => {
 	// 	console.log('INSIDE SET INTERVAL')
 	// 	this.setState({
-	// 		mute: 0,
 	// 		switchSlides: !this.state.switchSlides,
 	// 	});
 	// 	// this.state.switchSlides ? this.setState({mute: 1}) : null
@@ -50,7 +48,7 @@ class Home extends Component {
 		// console.log('INSIDE DID MOUNTTT')
 		// this.maxInterval = setInterval(this.setMax, 1000);
 		// console.log('MAX', this.maxInterval)
-		// setInterval(this.interval, 17000);
+		setInterval(this.setMax, 1000);
 
 		// setTimeout(() => {
 		// 	console.log('INSIDE DID MOUNT TIMEOUT');
@@ -135,7 +133,7 @@ class Home extends Component {
 		
 		return (
 			<section id="main">
-				<MusicPlayer />
+				{/*<MusicPlayer />*/}
 				{/*<Navbar split={this.split} />
 				<section className={`menu ${this.state.split ? 'split' : ''}`}>
 					<div className="scene">
@@ -172,23 +170,57 @@ class Home extends Component {
 					<Route path='/best-website/:section' component={MySection} />
 				</section>
 				<Footer />*/}
+				<div
+					style={{background: 'url(/img/neb.jpg)', minHeight: '100%'}}
+					className={this.state.max < 5 ? 'show' : 'hide'}
+				>
+					<a 
+						href="https://www.spacex.com/falcon9"
+						target="_blank"
+						style={{
+							color: 'blue', 
+							fontSize: '30px',
+							fontWeight: 'bold',
+							padding: '20px',
+							position: 'absolute',
+							textAlign: 'center',
+							top: '50%',
+							left: '50%',
+							height: '100px',
+							width: '100%',
+							marginLeft: '-50%',
+							marginTop: '-50px'
+						}}
+						>SpaceX.com/falcon9</a>
+				</div>
+				<iframe 
+					width="100%" 
+					height="100%"
+					className={this.state.max >= 5 && this.state.max < 15 ? 'show' : 'hide'} 
+					src="https://www.rocketlaunch.live/launch/amos-17"
+					></iframe>
+				<iframe
+					width="100%" 
+					height="100%" 
+					src="https://www.youtube.com/embed/21X5lGlDOfg?autoplay=1"
+					className={this.state.max >= 15 && this.state.max < 25 ? 'show' : 'hide'} 
+					frameBorder="0" 
+					allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+				<iframe 
+					width="100%" 
+					height="100%"
+					className={this.state.max >= 25 && this.state.max < 35 ? 'show' : 'hide'} 
+					src="https://www.rocketlaunch.live/"
+					></iframe>
+
+					
 				{/*<iframe 
-									width="100%" 
-									height="100%"
-									className={this.state.max === 20 && this.state.switchSlides ? 'show' : 'hide'} 
-									src="https://www.youtube.com/embed/OWbI6WtlI-k?autoplay=1&mute=1" 
-									frameBorder="0" 
-									allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-									// style={{zIndex: 9999999}} 
-									allowFullScreen></iframe>
-								<iframe 
-									src="https://weather.com/weather/hourbyhour/l/USCA0638:1:US" 
-									width="100%" 
-									height="100%" 
-									className={this.state.max === 20 && this.state.switchSlides ? 'hide' : 'show'} 
-									frameBorder="0" 
-									></iframe>*/}
-					{/*<iframe width="100%" height="100%" src="https://www.youtube.com/embed/vfc-73k9S-4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>*/}
+					src="https://weather.com/weather/hourbyhour/l/USCA0638:1:US" 
+					width="100%" 
+					height="100%" 
+					className={this.state.max >= 40 && this.state.max < 60 ? 'show' : 'hide'} 
+					frameBorder="0" 
+					></iframe>*/}
 			</section>
 		);
 	}
