@@ -29,11 +29,11 @@ class Home extends Component {
 	}
 	// maxInterval
 
-	setMax = () => {
-		this.setState({
-			max: this.state.max <= 35 ? this.state.max + 1 : 0,
-		});
-	}
+	// setMax = () => {
+	// 	this.setState({
+	// 		max: this.state.max <= 35 ? this.state.max + 1 : 0,
+	// 	});
+	// }
 
 	// interval = () => {
 	// 	console.log('INSIDE SET INTERVAL')
@@ -170,47 +170,11 @@ class Home extends Component {
 					<Route path='/best-website/:section' component={MySection} />
 				</section>
 				<Footer />*/}
-				<div
-					style={{background: 'url(/img/neb.jpg)', minHeight: '100%'}}
-					className={this.state.max < 5 ? 'show' : 'hide'}
-				>
-					<a 
-						href="https://www.spacex.com/falcon9"
-						target="_blank"
-						style={{
-							color: 'blue', 
-							fontSize: '30px',
-							fontWeight: 'bold',
-							padding: '20px',
-							position: 'absolute',
-							textAlign: 'center',
-							top: '50%',
-							left: '50%',
-							height: '100px',
-							width: '100%',
-							marginLeft: '-50%',
-							marginTop: '-50px'
-						}}
-						>SpaceX.com/falcon9</a>
-				</div>
+				
 				<iframe 
 					width="100%" 
 					height="100%"
-					className={this.state.max >= 5 && this.state.max < 15 ? 'show' : 'hide'} 
 					src="https://www.rocketlaunch.live/launch/amos-17"
-					></iframe>
-				<iframe
-					width="100%" 
-					height="100%" 
-					src="https://www.youtube.com/embed/21X5lGlDOfg?autoplay=1"
-					className={this.state.max >= 15 && this.state.max < 25 ? 'show' : 'hide'} 
-					frameBorder="0" 
-					allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
-				<iframe 
-					width="100%" 
-					height="100%"
-					className={this.state.max >= 25 && this.state.max < 35 ? 'show' : 'hide'} 
-					src="https://www.rocketlaunch.live/"
 					></iframe>
 
 					
