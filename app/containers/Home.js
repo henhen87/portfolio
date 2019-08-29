@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 // import Sections from 'components/Sections';
 // import Navbar from 'components/Navbar';
 // import Footer from 'components/Footer';
-// import MusicPlayer from 'components/MusicPlayer';
+import MusicPlayer from 'components/MusicPlayer';
 
 // const components = {
 // 	about: Sections.About,
@@ -25,7 +25,7 @@ class Home extends Component {
 	state = {
 		max: 0,
 		// mute: 0,
-		switchSlides: true,
+		bgIndex: 1
 	}
 	// maxInterval
 
@@ -48,14 +48,13 @@ class Home extends Component {
 		// console.log('INSIDE DID MOUNTTT')
 		// this.maxInterval = setInterval(this.setMax, 1000);
 		// console.log('MAX', this.maxInterval)
-		setInterval(this.setMax, 1000);
+		// setInterval(this.setMax, 1000);
 
-		// setTimeout(() => {
-		// 	console.log('INSIDE DID MOUNT TIMEOUT');
-		// 	const p = document.querySelector('#player');
-		// 	console.log('pppppp', p)
-		// 	p.style.visibility = "hidden";
-		// }, 7000)
+		setInterval(() => {
+			this.setState({
+				bgIndex: this.state.bgIndex === 7 ? 1 : this.state.bgIndex + 1
+			})
+		}, 20000)
 	}
 
 	// 	this.state.sides.forEach(e => {
@@ -130,62 +129,26 @@ class Home extends Component {
 
 	render () {
 		// let MySection = components[this.props.match.params.section];
-		
+		const background = {
+			background: `url(../img/space${this.state.bgIndex}.jpg)`,
+			backgroundRepeat: 'no-repeat',
+			backgroundSize: 'contain'
+		}
+		const font = {
+			color: 'pink',
+			fontSize: '25px',
+			textDecoration: 'underline'
+		}
+		const heart = '<3'
 		return (
-			<section id="main">
-				{/*<MusicPlayer />*/}
-				{/*<Navbar split={this.split} />
-				<section className={`menu ${this.state.split ? 'split' : ''}`}>
-					<div className="scene">
-						<div className={`cube show-${this.state.currentSide}`}>
-							<div onClick={e => {
-								e.preventDefault();
-								this.split(e);
-							}} data-value="about" className="cube__face cube__face--front">About Me</div>
-							<div onClick={e => {
-								e.preventDefault();
-								this.split(e);
-							}} data-value="skills" className="cube__face cube__face--back">Skills</div>
-							<div onClick={e => {
-								e.preventDefault();
-								this.split(e);
-							}} data-value="resume" className="cube__face cube__face--right">Resume</div>
-							<div onClick={e => {
-								e.preventDefault();
-								this.split(e);
-							}} data-value="music" className="cube__face cube__face--left">Music</div>
-							<div onClick={e => {
-								e.preventDefault();
-								this.split(e);
-							}} data-value="projects" className="cube__face cube__face--top">Projects</div>
-							<div onClick={e => {
-								e.preventDefault();
-								this.split(e);
-							}} data-value="contact" className="cube__face cube__face--bottom">Contact Me</div>
-						</div>
-					</div>
-					<canvas id="myCanvas" width="200" height="200"></canvas>
-				</section>
-				<section className={`description ${this.state.split ? 'split' : ''}`}>
-					<Route path='/best-website/:section' component={MySection} />
-				</section>
-				<Footer />*/}
-
-				<iframe 
-					width="100%" 
-					height="100%" 
-					src="https://www.youtube.com/embed/DhAaXMNwGA8?autoplay=1" 
-					frameborder="0" 
-					allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-					
-				{/*<iframe 
-					src="https://weather.com/weather/hourbyhour/l/USCA0638:1:US" 
-					width="100%" 
-					height="100%" 
-					className={this.state.max >= 40 && this.state.max < 60 ? 'show' : 'hide'} 
-					frameBorder="0" 
-					></iframe>*/}
+			<section id="main" style={background}>
+				<MusicPlayer />
+				<a href="https://youtu.be/gbvSQRHUm6c" style={font} target="_blank" onClick={() => player.pauseVideo()}>Forever</a>
+				<br/>
+				<br/>
+				<br/>
+				<br/>
+				<a href="https://youtu.be/sxuxJpWnicU" style={font} target="_blank" onClick={() => player.pauseVideo()}>lvu</a>
 			</section>
 		);
 	}
