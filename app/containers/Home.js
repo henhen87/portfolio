@@ -12,45 +12,131 @@ import MusicPlayer from 'components/MusicPlayer';
 // };
 
 class Home extends Component {
+	// constructor (props) {
+	// 	super(props);
+
+	// 	this.state = {
+	// 		checked: null,
+	// 		sides: ['front', 'right', 'left', 'bottom', 'top', 'back'],
+	// 		pause: false,
+	// 		currentSide: '',
+	// 		split: false
+	// 	}
 	state = {
-		pw: null,
-		pwExtra: null
+		max: 0,
+		// mute: 0,
+		bgIndex: 1
 	}
+	// maxInterval
 
-	fantasy = (e) => {
-		e.preventDefault();
+	// setMax = () => {
+	// 	this.setState({
+	// 		max: this.state.max <= 35 ? this.state.max + 1 : 0,
+	// 	});
+	// }
 
-		this.setState({
-			pw: e.target.value
-		});
-	}
+	// interval = () => {
+	// 	console.log('INSIDE SET INTERVAL')
+	// 	this.setState({
+	// 		switchSlides: !this.state.switchSlides,
+	// 	});
+	// 	// this.state.switchSlides ? this.setState({mute: 1}) : null
+	// }
 
-	readFantasy = () => {
-		if (Number(this.state.pw) === 2016) {
+	componentDidMount = () => {
+		// console.log('PLAYER', player.getPlaylistIndex())
+		// console.log('INSIDE DID MOUNTTT')
+		// this.maxInterval = setInterval(this.setMax, 1000);
+		// console.log('MAX', this.maxInterval)
+		// setInterval(this.setMax, 1000);
+
+		setInterval(() => {
 			this.setState({
-				pwExtra: 2016
+				bgIndex: this.state.bgIndex === 7 ? 1 : this.state.bgIndex + 1
 			})
-		}
+		}, 20000)
 	}
+
+	// 	this.state.sides.forEach(e => {
+	// 		this[e] = React.createRef();
+	// 	});
+	// }
+
+	// componentDidMount () {
+	// 	//ball
+	// 	let index = 0;
+	// 	let canvas = document.getElementById("myCanvas");
+	// 	let ctx = canvas.getContext("2d");
+	// 	let ballRadius = 10;
+	// 	let x = canvas.width / 2;
+	// 	let y = canvas.height - 30;
+	// 	let dx = 2;
+	// 	let dy = -2;
+
+	// 	function drawBall() {
+	// 	    ctx.beginPath();
+	// 	    ctx.arc(x, y, ballRadius, 0, Math.PI*2);
+	// 	    ctx.fillStyle = "#000000";
+	// 	    ctx.fill();
+	// 	    ctx.closePath();
+	// 	}
+	// 	function draw() {
+	// 		ctx.clearRect(0, 0, canvas.width, canvas.height);
+	// 		drawBall();
+
+	// 		if (x + dx > canvas.width-ballRadius || x + dx < ballRadius) {
+	// 	        dx = -dx;
+	// 	    }
+	// 	    if (y + dy > canvas.height-ballRadius || y + dy < ballRadius) {
+	// 	        dy = -dy;
+	// 	    }
+	// 		x += dx;
+	// 		y += dy;
+	// 	}
+	// 	setInterval(draw, 10);
+
+	// 	setInterval(() => {
+	// 		if (this.state.pause === false) {
+	// 			this.setState({ 
+	// 				currentSide: this.state.sides[index]
+	// 			});
+	// 			index++;
+	// 		}
+	// 		if (index === 6) {
+	// 			index = 0;
+	// 		}
+	// 	}, 2000);
+	// }
+
+	// split = (e, i) => {
+	// 	if (i) {
+	// 		console.log('iiii', i)
+	// 		this.setState({ 
+	// 			currentSide: this.state.sides[i]
+	// 		});
+	// 	}
+
+	// 	this.setState({
+	// 		split: !this.state.split,
+	// 		pause: !this.state.pause,
+	// 		currentSection: e.target.getAttribute('data-value')
+	// 	});
+	// 	if (e.target.getAttribute('data-value') !== this.props.match.params.section && this.state.split === false) {
+	// 		this.props.history.push(e.target.getAttribute('data-value'));
+	// 	}
+
+	// }
 
 	render () {
-
+		const background = {
+			background: `url(../img/m87.jpg)`,
+			backgroundRepeat: 'no-repeat',
+			backgroundSize: 'contain'
+		}
 
 		return (
-			<section id="main" style={{padding: '20px'}}>
-				<input type="text"  style={{width: '200px'}} placeholder="secret pw = year we first met" onChange={this.fantasy}/>
-				<br/>
-				<br/>
-				<button type="button" onClick={this.readFantasy}>Read Message</button>
-
-				{
-					this.state.pwExtra === 2016
-						? (
-							<p>
-								Unlikely but possible. Not meant to have seen... gitignore fail...
-							</p>
-						) : null
-				}
+			<section id="main" style={background}>
+				<MusicPlayer />
 			</section>
 		);
 	}

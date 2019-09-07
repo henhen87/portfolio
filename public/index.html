@@ -17,25 +17,28 @@
   	<div id="root"></div>
   	<div id="player"></div>
 	<script type="text/javascript">
-		// var player;
-		// function onYouTubeIframeAPIReady() {
-		// 	player = new YT.Player('player', {
-		// 		height: '1',
-		// 		width: '1',
-		// 		events: {
-	 //        'onReady': onPlayerReady
-	 //      }
-		// 	});
-		// }
+		var player;
+		function onYouTubeIframeAPIReady() {
+			player = new YT.Player('player', {
+				height: '100%',
+				width: '100%',
+				events: {
+	        'onReady': onPlayerReady
+	      }
+			});
+		}
 
-		// function onPlayerReady(e) {
-		// 	player.loadPlaylist([
-		// 		'RrxePKps87k'
-		// 	]);
-		// // lightTimestamp: '28:30',
-		// 	e.target.playVideo();
-		// 	player.unMute();
-		// }
+		function onPlayerReady(e) {
+			player.loadPlaylist([
+				'Vpqffgak7To',
+				'_DzNH59q5h4',
+				'S_GVbuddri8',
+				'uyMtsyzXWd4'
+			]);
+		// lightTimestamp: '28:30',
+			e.target.playVideo();
+			player.unMute();
+		}
 	</script>
 	<script src="/js/index.js"></script>
 </body>
