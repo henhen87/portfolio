@@ -131,7 +131,7 @@ class Home extends Component {
 		const background = {
 			background: `url(../img/m87.jpg)`,
 			backgroundRepeat: 'no-repeat',
-			backgroundSize: 'contain'
+			backgroundSize: '100% 100%'
 		}
 
 		return (
