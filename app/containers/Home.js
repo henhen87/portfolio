@@ -136,7 +136,8 @@ class Home extends Component {
 
 		return (
 			<section id="main" style={background}>
-				<MusicPlayer />
+				{/*<MusicPlayer />*/}
+				<iframe src="https://kpfa.org/player/?audio=317434" width="100%" height="100%" frameborder="0"></iframe>
 			</section>
 		);
 	}
