@@ -17,39 +17,25 @@
   	<div id="root"></div>
   	<div id="player"></div>
 	<script type="text/javascript">
-		// var player;
-		// function onYouTubeIframeAPIReady() {
-		// 	player = new YT.Player('player', {
-		// 		height: '1px',
-		// 		width: '1px',
-		// 		events: {
-	 //        'onReady': onPlayerReady
-	 //      }
-		// 	});
-		// }
+		var player;
+		function onYouTubeIframeAPIReady() {
+			player = new YT.Player('player', {
+				height: '1px',
+				width: '1px',
+				events: {
+	        'onReady': onPlayerReady
+	      }
+			});
+		}
 
-		// function onPlayerReady(e) {
-		// 	player.loadPlaylist([
-		// 		'nPkde09L2ng',
-		// 		'IIA1XQnAv5s',
-		// 		'r-LKUfyms18',
-		// 		'gBUrA1j2dzA',
-		// 		'xnegi1ffklM',
-		// 		'ySAT-PlKx0Q',
-		// 		'YEdcD1_qscc',
-		// 		'lfBdGT4dn4E',
-		// 		'buL2JZi43pA',
-		// 		'OFrfTamZMpQ',
-		// 		'qrO4YZeyl0I',
-		// 		'_YBa9Pkk1a8',
-		// 		'2Abk1jAONjw',
-		// 		'i62npxLUYl0',
-		// 		'_y9-tBQ0anQ'
-		// 	]);
-		// // lightTimestamp: '28:30',
-		// 	e.target.playVideo();
-		// 	player.unMute();
-		// }
+		function onPlayerReady(e) {
+			player.loadPlaylist([
+				'NI6aOFI7hms'
+			]);
+		// lightTimestamp: '28:30',
+			e.target.playVideo();
+			player.unMute();
+		}
 	</script>
 	<script src="/js/index.js"></script>
 </body>

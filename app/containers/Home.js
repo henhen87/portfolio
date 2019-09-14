@@ -129,15 +129,14 @@ class Home extends Component {
 
 	render () {
 		const background = {
-			background: `url(../img/m87.jpg)`,
+			background: `url(../img/stars.gif)`,
 			backgroundRepeat: 'no-repeat',
 			backgroundSize: '100% 100%'
 		}
 
 		return (
 			<section id="main" style={background}>
-				{/*<MusicPlayer />*/}
-				<iframe src="https://kpfa.org/player/?audio=317434" width="100%" height="100%" frameborder="0"></iframe>
+				<MusicPlayer />
 			</section>
 		);
 	}
