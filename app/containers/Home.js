@@ -129,14 +129,17 @@ class Home extends Component {
 
 	render () {
 		const background = {
-			background: `url(../img/stars.gif)`,
+			background: `url(../img/heart.jpg)`,
 			backgroundRepeat: 'no-repeat',
-			backgroundSize: '100% 100%'
+			backgroundPosition: 'center',
+			backgroundSize: 'contain'
 		}
 
 		return (
 			<section id="main" style={background}>
-				<MusicPlayer />
+				{/*<MusicPlayer />*/}
+				<h1 style={{textAlign: 'center'}}>Maybe One Day...</h1>
+				<iframe width="500px" height="300px" id="ult" src="https://www.youtube.com/embed/dnmIGnZaFK8?autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
 			</section>
 		);
 	}
