@@ -137,9 +137,7 @@ class Home extends Component {
 
 		return (
 			<section id="main" style={background}>
-				{/*<MusicPlayer />*/}
-				<h1 style={{textAlign: 'center'}}>Maybe One Day...</h1>
-				<iframe width="500px" height="300px" id="ult" src="https://www.youtube.com/embed/dnmIGnZaFK8?autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+				<MusicPlayer />
 			</section>
 		);
 	}

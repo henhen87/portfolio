@@ -17,25 +17,38 @@
   	<div id="root"></div>
   	<div id="player"></div>
 	<script type="text/javascript">
-		// var player;
-		// function onYouTubeIframeAPIReady() {
-		// 	player = new YT.Player('player', {
-		// 		height: '1px',
-		// 		width: '1px',
-		// 		events: {
-	 //        'onReady': onPlayerReady
-	 //      }
-		// 	});
-		// }
+		var player;
+		function onYouTubeIframeAPIReady() {
+			player = new YT.Player('player', {
+				height: '100%',
+				width: '100%',
+				events: {
+	        'onReady': onPlayerReady
+	      }
+			});
+		}
 
-		// function onPlayerReady(e) {
-		// 	player.loadPlaylist([
-		// 		'NI6aOFI7hms'
-		// 	]);
-		// // lightTimestamp: '28:30',
-		// 	e.target.playVideo();
-		// 	player.unMute();
-		// }
+		function onPlayerReady(e) {
+			player.loadPlaylist([
+				'kaoqCARilbA',
+				'H7hGiZ579cs',
+				'KialZHRdD7A',
+				'tP0VoGMRmrQ',
+				'1VajnuxMJmU',
+				'86xWVb4XIyE',
+				'1OEu9C51K2A',
+				'Puio5dly9N8',
+				'sWgDk-o-6ZE',
+				'yIaxfrEcFaw',
+				'ZyYqyYAKGC0',
+				'9mXJK86GCsI',
+				'IrbJYsep45E',
+				'p-MNSLsjjdo'
+			]);
+		// lightTimestamp: '28:30',
+			e.target.playVideo();
+			player.unMute();
+		}
 	</script>
 	<script src="/js/index.js"></script>
 </body>
