@@ -1,4 +1,4 @@
 # My Personal Website
 <div align="center">
-	<img src="./public/img/cpp.jpg" alt="#">
+	<img src="./public/img/escape.jpg" alt="#">
 </div>
