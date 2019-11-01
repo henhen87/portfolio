@@ -21,7 +21,7 @@
   "homepage": "https://github.com/henhen87/portfolio#readme",
   "devDependencies": {
     "autoprefixer": "^7.1.5",
-    "axios": "^0.16.2",
+    "axios": "^0.19.0",
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
     "babel-plugin-transform-class-properties": "^6.24.1",
