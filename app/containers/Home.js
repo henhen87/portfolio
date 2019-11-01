@@ -138,6 +138,9 @@ class Home extends Component {
 		return (
 			<section id="main" style={background}>
 				<MusicPlayer />
+				<p>Elena... you are so beautiful. I hope you have
+				a safe and fun Halloween.
+				</p>
 			</section>
 		);
 	}
